@@ -1,0 +1,27 @@
+<h1>Voice Based Date Picker</h1>
+<!-- <vui-datepicker (response)="onResponse($event)"></vui-datepicker> -->
+<mat-form-field appearance="fill">
+    <mat-label>Choose from date</mat-label>
+    <input matInput [matDatepicker]="picker" [vuiInput]="options">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker ></mat-datepicker>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Choose to date</mat-label>
+    <input matInput [matDatepicker]="pickerT" [vuiInput]="options">
+    <mat-datepicker-toggle matSuffix [for]="pickerT"></mat-datepicker-toggle>
+    <mat-datepicker #pickerT ></mat-datepicker>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput type="text" [vuiInput]="options">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput type="text" [vuiInput]="options">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Age</mat-label>
+    <input matInput type="text" [vuiInput]="options">
+</mat-form-field>
+<vui-input></vui-input>
