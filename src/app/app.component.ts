@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   
   title = 'AngularStarterProject';
+  fDate: any;
 
-  constructor() {
+  constructor(private ref: ChangeDetectorRef) {
 
   }
 
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit {
 
   onResponse(evt) {
     console.log(evt)
+    // this.ref.detectChanges();
   }
+
   
 }

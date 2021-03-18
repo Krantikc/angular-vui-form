@@ -2,7 +2,7 @@
 <!-- <vui-datepicker (response)="onResponse($event)"></vui-datepicker> -->
 <mat-form-field appearance="fill">
     <mat-label>Choose from date</mat-label>
-    <input matInput [matDatepicker]="picker" [vuiInput]="options">
+    <input matInput [matDatepicker]="picker" [vuiInput]="options" [(ngModel)]="fDate">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker ></mat-datepicker>
 </mat-form-field>
@@ -24,4 +24,20 @@
     <mat-label>Age</mat-label>
     <input matInput type="text" [vuiInput]="options">
 </mat-form-field>
-<vui-input></vui-input>
+<mat-form-field appearance="fill">
+    <mat-label>Address</mat-label>
+    <textarea matInput type="text" [vuiInput]="options"></textarea>
+</mat-form-field>
+<vui-input (onValueChange)="onResponse($event)"></vui-input>
+
+{{fDate}}
+
+
+<section>
+    <h2>Tasks Pending</h2>
+    <ul>
+        <li>Styling Start/Process/Stop buttons similar to google assistant</li>
+        <li>To find the current input type and parse the speech text accordingly</li>
+        <li>To move Date.prototype.isValid method inside of the module</li>
+    </ul>
+</section>

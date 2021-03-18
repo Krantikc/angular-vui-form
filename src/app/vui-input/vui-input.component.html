@@ -1,1 +1,2 @@
-<button  mat-raised-button (click)="startRecognition()">Start</button>
+<button  mat-raised-button (click)="startRecognition()" *ngIf="!process" [ngClass]="!!process?'recording':''">Start</button>
+<button  mat-raised-button (click)="stopRecognition()" *ngIf="process" [ngClass]="process">Stop</button>

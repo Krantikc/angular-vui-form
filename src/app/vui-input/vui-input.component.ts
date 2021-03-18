@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { VuiVoiceRecognitionService } from './vui-voice-recognition.service';
 import VuiResponse from './vui-response';
 import * as moment from 'moment/moment';
@@ -13,8 +13,12 @@ export class VuiInputComponent implements OnInit {
   recognition: any;
   transcript: string;
   selectedDate: Date;
+  process: any;
 
-  constructor(private vuiService: VuiVoiceRecognitionService) { }
+  @Output()
+  onValueChange: EventEmitter<any> = new EventEmitter();
+  
+  constructor(private vuiService: VuiVoiceRecognitionService, private ref: ChangeDetectorRef) { }
 
   ngOnInit() {
 
@@ -28,16 +32,20 @@ export class VuiInputComponent implements OnInit {
     // this.vuiService.response.next(new VuiResponse('', dates[0]));
 
     this.vuiService.response.subscribe((data) => {
-      
 
+      this.transcript = '';
       if (data.type == 'SWITCH_TO_NEXT') {
         this.vuiService.currentRef++;
         const currentRef = this.vuiService.currentRef;
         this.vuiService.inputRefs[currentRef].nativeElement.focus();
+
       } else if (data.type == 'SWITCH_TO_PREVIOUS') {
         this.vuiService.currentRef--;
         const currentRef = this.vuiService.currentRef;
         this.vuiService.inputRefs[currentRef].nativeElement.focus();
+      } else if (data.type == 'CLEAR') {
+        console.log(data)
+        this.vuiService.inputRefs[this.vuiService.currentRef].nativeElement.value = '';
       } else {
         const currentRef = this.vuiService.currentRef;
         const currentEl = this.vuiService.inputRefs[currentRef].nativeElement;
@@ -49,10 +57,18 @@ export class VuiInputComponent implements OnInit {
         }
         
         currentEl.dispatchEvent(new Event('input'));
+        this.onValueChange.emit(data);
       }
+
+      this.setProcess('listening');
 
     });
     
+  }
+
+  setProcess(processType) {
+    this.process = processType;
+    this.ref.detectChanges();
   }
 
   formatDate(date: Date) {
@@ -66,11 +82,15 @@ export class VuiInputComponent implements OnInit {
       this.recognition.continuous = true;
       this.recognition.interimResults = true;
     
-      this.recognition.onstart = function(event) {
+      this.recognition.onstart = (event) => {
+        this.setProcess('listening');
         console.log(event)
       }
-      this.recognition.onresult = (event) => { 
+      this.recognition.onresult = (event) => {
         
+        console.log(event, 'RESULLLL')
+
+        this.setProcess('parsing');
         var interim_transcript = '';
 
         for (var i = event.resultIndex; i < event.results.length; ++i) {
@@ -90,19 +110,26 @@ export class VuiInputComponent implements OnInit {
 
           }
         }
-
       }
       this.recognition.onerror = (event) => { 
+        this.setProcess(null);
         console.log(event)
        }
        this.recognition.onend = (event) => { 
-        console.log(event)
-        this.vuiService.interpretSpeech(this.transcript)[0];
+         console.log(event)
+         this.vuiService.interpretSpeech(this.transcript)[0];
+         this.setProcess(null);
        }
   }
 
   startRecognition() {
     this.transcript = '';
     this.recognition.start();
+  }
+
+  stopRecognition() {
+    this.transcript = '';
+    this.recognition.stop();
+    this.setProcess(null);
   }
 }

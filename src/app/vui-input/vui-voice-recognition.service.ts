@@ -142,7 +142,8 @@ export class VuiVoiceRecognitionService {
         || speechKeys.includes('next')
         || speechKeys.includes('previous')
         || speechKeys.includes('first')
-        || speechKeys.includes('last')) {
+        || speechKeys.includes('last')
+        || speechKeys.includes('clear')) {
           return true;
         }
         return false;
@@ -150,16 +151,19 @@ export class VuiVoiceRecognitionService {
 
   findInstructionType(speechText: string) {
     let type = '';
+    speechText = speechText.trim().toLocaleLowerCase();
     if (this.isInputSwitch(speechText)) {
       type = 'SWITCH_TO_';
-      if (speechText.toLocaleLowerCase().includes('next')) {
+      if (speechText.includes('next')) {
         type = `${type}NEXT`;
-      } else if (speechText.toLocaleLowerCase().includes('previous')) {
+      } else if (speechText.includes('previous')) {
         type = `${type}PREVIOUS`;
-      } else if (speechText.toLocaleLowerCase().includes('first')) {
+      } else if (speechText.includes('first')) {
         type = `${type}FIRST`;
-      } else if (speechText.toLocaleLowerCase().includes('last')) {
+      } else if (speechText.includes('last')) {
         type = `${type}LAST`;
+      } else if (speechText.includes('clear') || speechText.includes('clean')) {
+        type = `CLEAR`;
       }
     } else {
       type = 'INPUT';
@@ -176,7 +180,7 @@ export class VuiVoiceRecognitionService {
 
     speechText = speechText.replace('from', '');
     let dates =  speechText.trim().split('to ');
-    let parsedDates: Array<Date> = [];
+    let parsedDates: Array<any> = [];
     dates.forEach((dateStr: string) => {
       parsedDates.push(this.dateParser(dateStr));
     });
@@ -408,10 +412,10 @@ export class VuiVoiceRecognitionService {
   
 }
 
-Date.prototype.isValid = function () { 
-              
-  // If the date object is invalid it 
-  // will return 'NaN' on getTime()  
-  // and NaN is never equal to itself. 
-  return this.getTime() === this.getTime(); 
-}; 
+// Date.prototype.isValid = function () { 
+               
+//   // If the date object is invalid it 
+//   // will return 'NaN' on getTime()   
+//   // and NaN is never equal to itself.   
+//   return this.getTime() === this.getTime(); 
+// }; 

@@ -18,9 +18,12 @@ export class VuiInputDirective implements OnInit {
 
   constructor(private vuiService: VuiVoiceRecognitionService, 
               private el: ElementRef) { 
-    console.log(this.el);
-
+    this.el.nativeElement.setAttribute('vui-ref', this.vuiService.inputRefs.length);
     this.vuiService.inputRefs.push(this.el);
+
+    this.el.nativeElement.addEventListener('focus', (evt) => {
+      this.vuiService.currentRef = parseInt(evt.target.getAttribute('vui-ref'));
+    })
    
   }
   ngOnInit(): void {
