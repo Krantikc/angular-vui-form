@@ -1,0 +1,27 @@
+.listening {
+    color: red;
+}
+
+.parsing {
+    color: green;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-size: 26px 26px;
+    background-repeat: no-repeat;
+}
+
+.icon-mic-blue {
+    background-image: url('../../assets/icons/mic-blue-solid.png');
+}
+
+.icon-mic-red {
+    background-image: url('../../assets/icons/mic-red-solid.png');
+}
+
+.icon-mic-green { 
+    background-image: url('../../assets/icons/mic-green-solid.png');
+}

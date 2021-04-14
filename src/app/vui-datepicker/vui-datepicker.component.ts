@@ -49,14 +49,6 @@ export class VuiDatepickerComponent implements OnInit {
   ngOnInit() {
 
     this.initVoiceRecognition();
-    // this.recognition.start();
-    const text = 'from 22nd August 2019';
-    const dates = this.vuiService.interpretSpeech(text);
-
-    // this.response.next(new Response('', dates[0]))
-    // this.response.subscribe((data: Response) => {
-    //   this.createdDate.nativeElement.value = data.value[0];
-    // });
 
     this.vuiService.response.subscribe((data) => {
 
@@ -81,9 +73,6 @@ export class VuiDatepickerComponent implements OnInit {
       this.recognition.continuous = true;
       this.recognition.interimResults = true;
     
-      this.recognition.onstart = function(event) {
-        console.log(event)
-      }
       this.recognition.onresult = (event) => { 
         
         var interim_transcript = '';
@@ -91,24 +80,19 @@ export class VuiDatepickerComponent implements OnInit {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
           if (event.results[i].isFinal) {
             this.transcript += event.results[i][0].transcript;
-            this.vuiService.interpretSpeech(this.transcript)[0];
-            let dateRange = this.vuiService.interpretSpeech(this.transcript);
+            this.vuiService.interpretSpeech(this.transcript, 'date')[0];
+            let dateRange = this.vuiService.interpretSpeech(this.transcript, 'date');
             const resp = new Response('date-range', dateRange);
             this.response.next(resp);
           } else {
             interim_transcript += event.results[i][0].transcript;
-            console.log(interim_transcript)
-
           }
         }
 
       }
-      this.recognition.onerror = (event) => { 
-        console.log(event)
-       }
-       this.recognition.onend = (event) => { 
-        console.log(event)
-        this.vuiService.interpretSpeech(this.transcript)[0];
+ 
+       this.recognition.onend = (event) => {
+        this.vuiService.interpretSpeech(this.transcript, 'date')[0];
        }
   }
 

@@ -1,3 +1,25 @@
-.container {
+.vui-example {
+    h1 {
+        text-align: center;
+        padding: 20px;
+        color: #0a9d9d;
+        margin-bottom: 30px;
+        background: #ecfff9;
+    }
+    .main-container {
+        display: flex;
+        justify-content: space-between;
 
+        .left-section {
+            width: 80%;
+            margin-right: 30px;
+            padding: 0 30px;
+            border-right: 1px solid #EBEBEB;
+        }
+
+        .right-section {
+            background: #fdffdc;
+            padding: 20px;
+        }
+    }
 }

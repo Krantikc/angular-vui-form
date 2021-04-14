@@ -4,7 +4,12 @@ import * as moment from 'moment/moment';
 
 const DEFAULT_OPTS = {
   type: 'date',
-  dateFormat: 'DD/MM/YYYY'
+  format: 'DD/MM/YYYY'
+}
+
+class Options {
+  type: string;
+  format?: string;
 }
 
 @Directive({
@@ -12,13 +17,19 @@ const DEFAULT_OPTS = {
 })
 export class VuiInputDirective implements OnInit {
 
+  /**
+   * Options for vui input field
+   * type: 'text', 'address', 'date', 'number'
+   * format: 'DD/MM/YYYY'
+   */
   @Input('vuiInput')
-  options: any;
+  options: Options; 
 
 
   constructor(private vuiService: VuiVoiceRecognitionService, 
               private el: ElementRef) { 
     this.el.nativeElement.setAttribute('vui-ref', this.vuiService.inputRefs.length);
+    
     this.vuiService.inputRefs.push(this.el);
 
     this.el.nativeElement.addEventListener('focus', (evt) => {
@@ -28,27 +39,15 @@ export class VuiInputDirective implements OnInit {
   }
   ngOnInit(): void {
     this.options = this.options || DEFAULT_OPTS;
-
-    // this.storeAllInputs();
-
-    // this.vuiService.response.subscribe((data) => {
-
-    //   if (data.type == 'SWITCH_TO_NEXT') {
-
-    //   }
-    //   console.log(this.el);
-    //   this.el.nativeElement.value = this.formatDate(data.value[0]);
-    //   this.el.nativeElement.dispatchEvent(new Event('input'));
-    // });
+    this.el['options'] = this.options;
   }
 
   storeAllInputs() {
     let elms = document.querySelectorAll('[vuiInput]');
-    console.log(elms);
   }
 
   formatDate(date: Date) {
-    return moment(date).format(this.options.dateFormat);
+    return moment(date).format(this.options.format);
   }
 
 }

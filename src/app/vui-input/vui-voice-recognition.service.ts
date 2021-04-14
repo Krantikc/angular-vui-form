@@ -135,9 +135,17 @@ export class VuiVoiceRecognitionService {
     // this.data = feedings;
   }
 
-  isInputSwitch(speechText: string) {
+  isInputSwitch(speechText: string, inputType: string) {
     let speechKeys = speechText.trim().toLocaleLowerCase().split(' ');
+
+    if (inputType == 'address' && !(speechKeys.includes('goto') 
+                                    || speechKeys.includes('switch') 
+                                    || speechKeys.includes('go') 
+                                    || speechKeys.includes('clear'))) {
+      return false;
+    }
     if (speechKeys.includes('goto') 
+        || speechKeys.includes('switch') 
         || speechKeys.includes('go')
         || speechKeys.includes('next')
         || speechKeys.includes('previous')
@@ -149,14 +157,14 @@ export class VuiVoiceRecognitionService {
         return false;
   }
 
-  findInstructionType(speechText: string) {
+  findInstructionType(speechText: string, inputType: string) {
     let type = '';
     speechText = speechText.trim().toLocaleLowerCase();
-    if (this.isInputSwitch(speechText)) {
+    if (this.isInputSwitch(speechText, inputType)) {
       type = 'SWITCH_TO_';
       if (speechText.includes('next')) {
         type = `${type}NEXT`;
-      } else if (speechText.includes('previous')) {
+      } else if (speechText.includes('previous') || speechText.includes('back')) {
         type = `${type}PREVIOUS`;
       } else if (speechText.includes('first')) {
         type = `${type}FIRST`;
@@ -171,39 +179,35 @@ export class VuiVoiceRecognitionService {
     return type;
   }
 
-  interpretSpeech(speechText: string) {
-
-    let instType = this.findInstructionType(speechText);
+  interpretSpeech(speechText: string, inputType: string) {
+    let instType = this.findInstructionType(speechText, inputType);
     if (instType != 'INPUT') {
       return instType;
     }
 
-    speechText = speechText.replace('from', '');
-    let dates =  speechText.trim().split('to ');
-    let parsedDates: Array<any> = [];
-    dates.forEach((dateStr: string) => {
-      parsedDates.push(this.dateParser(dateStr));
-    });
+    if (inputType == 'text') {
+      return speechText.replace(/ /g, '');
+    }
 
-    if (parsedDates[0].isValid()) {
-      return parsedDates;
+    if (inputType == 'number') {
+      return this.wordsToNumber(speechText);
+    }
+
+    if (inputType == 'date') {
+      speechText = speechText.replace('from', '');
+      let dates =  speechText.trim().split('to ');
+      let parsedDates: Array<any> = [];
+      dates.forEach((dateStr: string) => {
+        parsedDates.push(this.dateParser(dateStr));
+      });
+  
+      if (parsedDates[0].isValid()) {
+        return parsedDates;
+      }
     }
 
     return speechText;
 
-
-
-    // this.wordsToNumber('nineteen hundred twenty');
-    // this.wordsToNumber('two thousand ');
-    // this.wordsToNumber(' two thousand ten ');
-    // this.wordsToNumber('  two   thousand twenty  ');
-    // this.wordsToNumber('twenty nineteen');
-    // this.wordsToNumber('thirty one');
-    // this.wordsToNumber('twenty nine');
-    // this.wordsToNumber('twelve');
-    // this.wordsToNumber('thousand eighty');
-    // this.wordsToNumber('ninety nine');
-    // this.wordsToNumber('hundred and nine');
   }
 
   dateParser(dateStr: string): Date {
@@ -249,22 +253,9 @@ export class VuiVoiceRecognitionService {
           datePartObj.year = currentDate.format('YYYY');
           datePartObj.date = '01';
       }
-      
-      // if (dateParts.length == 1) {
-      //   datePartObj = Object.assign({}, this.parseDatePart(dateParts[0]));
-  
-      //   const currentDate = moment();
-      //   datePartObj.month = currentDate.format('MM');
-      //   datePartObj.year = currentDate.format('YYYY');
-      // } else if (dateParts.length == 2) {
-      //   if (MONTHS.includes(dateParts[0].toUpperCase())) {
-  
-      //   }
-      // }
 
       cleanDateStr = this.dateBuilder(datePartObj);
     }
-    console.log(cleanDateStr);
     parsedDate = moment(cleanDateStr).toDate();
     return parsedDate;
   }
@@ -291,10 +282,6 @@ export class VuiVoiceRecognitionService {
       const month = MONTHS.indexOf(datePart.toUpperCase()) + 1;
       datePartObj.month = month < 10 ? '0' + month : month;
     }
-
-    // this.parseYearVal(datePart, datePartObj);
-    // this.parseMonthVal(datePart, datePartObj);
-    // this.parseDateVal(datePart, datePartObj);
     return datePartObj;
   }
 
@@ -337,7 +324,6 @@ export class VuiVoiceRecognitionService {
 
   parseMonthVal(datePart, datePartObj) {
     const month = MONTHS.indexOf(datePart.toUpperCase());
-    console.log(month);
     if (month > -1) {
       datePartObj.month = month < 10 ? '0' + month : month;
     }
@@ -385,7 +371,6 @@ export class VuiVoiceRecognitionService {
       }
 
     });
-    console.log(num);
     return num;
   }
 
@@ -411,11 +396,3 @@ export class VuiVoiceRecognitionService {
   }
   
 }
-
-// Date.prototype.isValid = function () { 
-               
-//   // If the date object is invalid it 
-//   // will return 'NaN' on getTime()   
-//   // and NaN is never equal to itself.   
-//   return this.getTime() === this.getTime(); 
-// }; 

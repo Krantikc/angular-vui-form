@@ -9,6 +9,21 @@ export class AppComponent implements OnInit {
   title = 'AngularStarterProject';
   fDate: any;
 
+  optionsText = {
+    type: 'text'
+  }
+
+  optionsDate = {
+    type: 'date'
+  }
+
+  optionsNumber = {
+    type: 'number'
+  }
+
+  optionsAddress = {
+    type: 'address'
+  }
   constructor(private ref: ChangeDetectorRef) {
 
   }
@@ -18,8 +33,6 @@ export class AppComponent implements OnInit {
   }
 
   onResponse(evt) {
-    console.log(evt)
-    // this.ref.detectChanges();
   }
 
   

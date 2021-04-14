@@ -1,43 +1,67 @@
-<h1>Voice Based Date Picker</h1>
-<!-- <vui-datepicker (response)="onResponse($event)"></vui-datepicker> -->
-<mat-form-field appearance="fill">
-    <mat-label>Choose from date</mat-label>
-    <input matInput [matDatepicker]="picker" [vuiInput]="options" [(ngModel)]="fDate">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker ></mat-datepicker>
-</mat-form-field>
-<mat-form-field appearance="fill">
-    <mat-label>Choose to date</mat-label>
-    <input matInput [matDatepicker]="pickerT" [vuiInput]="options">
-    <mat-datepicker-toggle matSuffix [for]="pickerT"></mat-datepicker-toggle>
-    <mat-datepicker #pickerT ></mat-datepicker>
-</mat-form-field>
-<mat-form-field appearance="fill">
-    <mat-label>First Name</mat-label>
-    <input matInput type="text" [vuiInput]="options">
-</mat-form-field>
-<mat-form-field appearance="fill">
-    <mat-label>Last Name</mat-label>
-    <input matInput type="text" [vuiInput]="options">
-</mat-form-field>
-<mat-form-field appearance="fill">
-    <mat-label>Age</mat-label>
-    <input matInput type="text" [vuiInput]="options">
-</mat-form-field>
-<mat-form-field appearance="fill">
-    <mat-label>Address</mat-label>
-    <textarea matInput type="text" [vuiInput]="options"></textarea>
-</mat-form-field>
-<vui-input (onValueChange)="onResponse($event)"></vui-input>
+<div class="vui-example">
+    <h1>Voice Based Date Pickers and Text inputs</h1>
 
-{{fDate}}
+    <div class="main-container container">
+        <div class="section left-section">
+            <div class="row">
+                <mat-form-field class="col-6">
+                    <mat-label>Choose from date</mat-label>
+                    <input matInput [matDatepicker]="picker" [vuiInput]="optionsDate" [(ngModel)]="fDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker ></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field  class="col-6">
+                    <mat-label>Choose to date</mat-label>
+                    <input matInput [matDatepicker]="pickerT" [vuiInput]="optionsDate">
+                    <mat-datepicker-toggle matSuffix [for]="pickerT"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerT ></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field  class="col-6">
+                    <mat-label>First Name</mat-label>
+                    <input matInput type="text" [vuiInput]="optionsText">
+                </mat-form-field>
+                <mat-form-field  class="col-6">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text" [vuiInput]="optionsText">
+                </mat-form-field>
+            </div>
 
+            <div class="row">
+                <mat-form-field  class="col-6">
+                    <mat-label>Age</mat-label>
+                    <input matInput type="text" [vuiInput]="optionsNumber">
+                </mat-form-field>
+                <mat-form-field  class="col-6">
+                    <mat-label>Gender</mat-label>
+                    <input matInput type="text" [vuiInput]="optionsText">
+                </mat-form-field>
+                
+            </div>
+            <div class="row">
+                <mat-form-field class="col-6">
+                    <mat-label>Address</mat-label>
+                    <textarea matInput type="text" [vuiInput]="optionsAddress"></textarea>
+                </mat-form-field>    
+            </div>
+            <vui-input (onValueChange)="onResponse($event)"></vui-input>
+        </div>
 
-<section>
-    <h2>Tasks Pending</h2>
-    <ul>
-        <li>Styling Start/Process/Stop buttons similar to google assistant</li>
-        <li>To find the current input type and parse the speech text accordingly</li>
-        <li>To move Date.prototype.isValid method inside of the module</li>
-    </ul>
-</section>
+        <div class="section right-section">
+            <h3>Usage</h3>
+            <ul>
+                <li>Click on <b>Start</b> button, to begin voice recongnition</li>
+                <li>Say something like
+                    <ul>
+                        <li>'January 21st 2021'</li>
+                        <li>'August 15th 1947'</li>
+                        <li>'November 27 2021'</li>
+                    </ul>
+                </li>
+                <li>Once datepicker field is filled, you can navigate the focus to next input field by saying <b>'go to next'</b> or <b>'next'</b></li>
+                <li>And go back to previous input field by saying <b>'go to previous'</b></li>
+            </ul>
+        </div>
+    </div>
+</div>
