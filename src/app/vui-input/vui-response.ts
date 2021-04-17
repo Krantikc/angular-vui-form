@@ -1,7 +1,9 @@
 /**
+ * @param type Type of response
  * Possible values for type are:
- * 'daterange', 'date', 'text', 'number', 'numberrange', 
- * 'next-tab', 'submit'
+ * 'date-range', 'date', 'text', 'number'
+ * @param value Response value which can be text, number, date
+ * 
  */
 export default class VuiResponse {
     type: string; 

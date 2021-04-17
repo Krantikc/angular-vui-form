@@ -24,6 +24,18 @@ export class AppComponent implements OnInit {
   optionsAddress = {
     type: 'address'
   }
+  
+  optionsSelect = {
+    type: 'select'
+  }
+
+  styleOpts = {
+    iconParse: 'icon icon-mic-green',
+    animationParse: 'parse-green'
+  }
+
+  formData: any;
+
   constructor(private ref: ChangeDetectorRef) {
 
   }
@@ -33,7 +45,12 @@ export class AppComponent implements OnInit {
   }
 
   onResponse(evt) {
+    console.log(evt)
   }
 
+  submitForm(form) {
+    console.table(form.value);
+    this.formData = form.value;
+  }
   
 }

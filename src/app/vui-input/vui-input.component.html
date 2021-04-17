@@ -1,6 +1,4 @@
-<button  mat-raised-button (click)="startRecognition()" *ngIf="!process" [ngClass]="!!process?'recording':''">
-    <i class="icon icon-mic-blue"></i> Start 
-</button>
-<button  mat-raised-button (click)="stopRecognition()" *ngIf="process" [ngClass]="process">
-    <i [ngClass]="process == 'parsing' ? 'icon icon-mic-green' : 'icon icon-mic-red'"></i> Stop
-</button>
+<div [class]="style.containerClass">
+    <i [class]="style.iconStart" mat-raised-button (click)="startRecognition()" *ngIf="!process"></i>
+    <i [ngClass]="process == 'parsing' ? style.iconParse + ' ' + style.animationParse : style.iconStop + ' ' + style.animationListen" (click)="stopRecognition()" *ngIf="process"></i>
+</div>

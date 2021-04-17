@@ -1,11 +1,21 @@
-import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { VuiVoiceRecognitionService } from './vui-voice-recognition.service';
 import VuiResponse from './vui-response';
 import * as moment from 'moment/moment';
 
+const DEFAULT_STYLE = {
+  containerClass: 'centered',
+  iconStart: 'icon icon-mic-blue',
+  iconParse: 'icon icon-mic-blue',
+  iconStop: 'icon icon-mic-blue',
+  animationParse: 'parsing',
+  animationListen: 'listening'
+}
+
 @Component({
   selector: 'vui-input',
   templateUrl: './vui-input.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./vui-input.component.scss']
 })
 export class VuiInputComponent implements OnInit {
@@ -15,6 +25,9 @@ export class VuiInputComponent implements OnInit {
   selectedDate: Date;
   process: any;
 
+  @Input()
+  style;
+
   @Output()
   onValueChange: EventEmitter<any> = new EventEmitter();
   
@@ -22,36 +35,40 @@ export class VuiInputComponent implements OnInit {
 
   ngOnInit() {
 
-    this.initVoiceRecognition();
-    // this.recognition.start();
-    const text = 'from 22nd August 2019';
-    const dates = this.vuiService.interpretSpeech(text, 'date');
+    this.style = { ...DEFAULT_STYLE, ...this.style };
 
-    
-
-    // this.vuiService.response.next(new VuiResponse('', dates[0]));
+    try {
+      this.initVoiceRecognition();
+    } catch (e) {
+      console.error('Failed to initialize or parse');
+      this.stopRecognition();
+    }
 
     this.vuiService.response.subscribe((data) => {
 
       this.transcript = '';
 
       let currentRef = this.vuiService.currentRef;
-      if (data.type == 'SWITCH_TO_NEXT') {
+      if (data.type == 'COMMAND_NEXT') {
         currentRef = ++this.vuiService.currentRef;
-      } else if (data.type == 'SWITCH_TO_PREVIOUS') {
+      } else if (data.type == 'COMMAND_PREVIOUS') {
         currentRef = --this.vuiService.currentRef;
-      } else if (data.type == 'SWITCH_TO_FIRST') {
+      } else if (data.type == 'COMMAND_FIRST') {
         currentRef = 0;
-      } else if (data.type == 'SWITCH_TO_LAST') {
+      } else if (data.type == 'COMMAND_LAST') {
         currentRef = this.vuiService.inputRefs.length - 1;
-      } else if (data.type == 'CLEAR') {
+      } else if (data.type == 'COMMAND_CLEAR') {
         this.vuiService.inputRefs[currentRef].nativeElement.value = '';
+      } else if (data.type == 'COMMAND_CLICK') {
+        this.vuiService.inputRefs[currentRef].nativeElement.click();
+      } else if (data.type == 'COMMAND_STOP') {
+        this.stopRecognition();
       } else {
         const currentInputObj = this.vuiService.inputRefs[currentRef];
         const currentEl = currentInputObj.nativeElement;
         const opts = currentInputObj['options'];
 
-        if (data.value[0] instanceof Date) {
+        if (data.value && data.value[0] instanceof Date) {
           currentEl.value = this.formatDate(data.value[0], opts && opts.format);
         } else {
           currentEl.value = data.value;
@@ -64,9 +81,7 @@ export class VuiInputComponent implements OnInit {
       this.vuiService.inputRefs[currentRef].nativeElement.focus();
 
       this.setProcess('listening');
-
     });
-    
   }
 
   setProcess(processType) {
@@ -80,13 +95,10 @@ export class VuiInputComponent implements OnInit {
 
   initVoiceRecognition() {
 
-
       this.recognition = new window['webkitSpeechRecognition']();
       this.recognition.continuous = true;
       this.recognition.interimResults = true;
 
-      
-    
       this.recognition.onstart = (event) => {
         this.setProcess('listening');
       }
@@ -96,32 +108,27 @@ export class VuiInputComponent implements OnInit {
       const opts = currentInputObj['options'];
 
         this.setProcess('parsing');
-        var interim_transcript = '';
 
         for (var i = event.resultIndex; i < event.results.length; ++i) {
           if (event.results[i].isFinal) {
             this.transcript += event.results[i][0].transcript;
-            this.vuiService.interpretSpeech(this.transcript, opts && opts.type)[0];
             let data: any = this.vuiService.interpretSpeech(this.transcript, opts && opts.type);
-            let resp = new VuiResponse('date-range', data);
-            if (typeof data == 'string') {
-              resp = new VuiResponse(data, data.includes('_') ? '' : data);
+            let resp = new VuiResponse('invalid', data);
+            if (data) {
+              resp = new VuiResponse('date-range', data);
+              if (typeof data == 'string') {
+                resp = new VuiResponse(data, data.includes('_') ? '' : data);
+              }
             }
            
             this.vuiService.response.next(resp);
-          } else {
-            interim_transcript += event.results[i][0].transcript;
           }
         }
       }
-      this.recognition.onerror = (event) => { 
+      this.recognition.onerror = () => { 
         this.setProcess(null);
       }
-      this.recognition.onend = (event) => { 
-        const currentInputObj = this.vuiService.inputRefs[this.vuiService.currentRef];
-        const opts = currentInputObj['options'];
-
-        this.vuiService.interpretSpeech(this.transcript, opts && opts.type)[0];
+      this.recognition.onend = () => {
         this.setProcess(null);
       }
   }

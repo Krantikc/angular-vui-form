@@ -1,12 +1,7 @@
 import { ElementRef, Injectable } from '@angular/core';
-// import * as feedings from '../assets/data/feedings.json';
 import * as moment from "moment";
 import { Subject } from 'rxjs';
-import { isNumber } from 'util';
 import VuiResponse from './vui-response';
-// import wordsToNumbers from 'words-to-numbers';
-// // const { wordsToNumbers } = require('words-to-numbers');
-// window['wordsToNumbers'] = wordsToNumbers;
 
 const UNIT = {
   zero: 0,
@@ -100,19 +95,35 @@ const MAGNITUDE = {
 };
 
 const NUMBER = { ...UNIT, ...TEN, ...MAGNITUDE };
-
-const UNIT_KEYS = Object.keys(UNIT);
-const TEN_KEYS = Object.keys(TEN);
-const MAGNITUDE_KEYS = Object.keys(MAGNITUDE);
-
-const NUMBER_WORDS = [ ...UNIT_KEYS, ...TEN_KEYS, ...MAGNITUDE_KEYS];
-
-const JOINERS = ['and', '&'];
-const DECIMALS = ['point', 'dot'];
 const SUFFIXES = ['st', 'nd', 'rd', 'th'];
 
 const MONTHS = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
 
+const KEY_WORDS_FWD_NAV = ['forward', 'next'];
+const KEY_WORDS_BCK_NAV = ['back', 'backward', 'previous'];
+const KEY_WORDS_CLEAR = ['clear', 'clean', 'delete', 'remove'];
+const KEY_WORDS_CLICK = ['click', 'submit', 'expand', 'open', 'show'];
+const KEY_WORDS_STOP = ['stop', 'end', 'done'];
+
+const KEY_WORDS_INST = ['goto', 'switch', 'go', ...KEY_WORDS_CLEAR, ...KEY_WORDS_CLICK]; // Instruction types
+const KEY_WORDS_NAV = [
+                        ...KEY_WORDS_FWD_NAV, 
+                        ...KEY_WORDS_BCK_NAV,
+                        ...KEY_WORDS_STOP,
+                        , 'first', 'last',
+                      ]; // Navigation types
+
+const KEY_WORDS = [...KEY_WORDS_INST, ...KEY_WORDS_NAV];
+
+const INST_MAPPINGS = {
+  next: KEY_WORDS_FWD_NAV,
+  previous: KEY_WORDS_BCK_NAV,
+  first: ['first'],
+  last: ['last'],
+  clear: KEY_WORDS_CLEAR,
+  click: KEY_WORDS_CLICK,
+  stop: KEY_WORDS_STOP 
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -125,54 +136,23 @@ export class VuiVoiceRecognitionService {
   private data: any;
   private mom = moment;
 
- 
-  loadFeedings() {
-    // const jsonURL = environment.endPoint + '/data';
-    // const jsonURL = 'http://localhost:8080/feedings.json';
-    // this.http.get(jsonURL).subscribe((resp: any) => {
-    //   this.data = resp;
-    // });
-    // this.data = feedings;
-  }
-
-  isInputSwitch(speechText: string, inputType: string) {
-    let speechKeys = speechText.trim().toLocaleLowerCase().split(' ');
-
-    if (inputType == 'address' && !(speechKeys.includes('goto') 
-                                    || speechKeys.includes('switch') 
-                                    || speechKeys.includes('go') 
-                                    || speechKeys.includes('clear'))) {
+  isInputSwitch(speechKeys: any[], inputType: string) {
+    if (inputType == 'address' && !speechKeys.some(key => KEY_WORDS_INST.includes(key))) {
       return false;
     }
-    if (speechKeys.includes('goto') 
-        || speechKeys.includes('switch') 
-        || speechKeys.includes('go')
-        || speechKeys.includes('next')
-        || speechKeys.includes('previous')
-        || speechKeys.includes('first')
-        || speechKeys.includes('last')
-        || speechKeys.includes('clear')) {
-          return true;
-        }
-        return false;
+    if (speechKeys.some(key => KEY_WORDS.includes(key))) {
+      return true;
+    }
+    return false;
   }
 
   findInstructionType(speechText: string, inputType: string) {
     let type = '';
     speechText = speechText.trim().toLocaleLowerCase();
-    if (this.isInputSwitch(speechText, inputType)) {
-      type = 'SWITCH_TO_';
-      if (speechText.includes('next')) {
-        type = `${type}NEXT`;
-      } else if (speechText.includes('previous') || speechText.includes('back')) {
-        type = `${type}PREVIOUS`;
-      } else if (speechText.includes('first')) {
-        type = `${type}FIRST`;
-      } else if (speechText.includes('last')) {
-        type = `${type}LAST`;
-      } else if (speechText.includes('clear') || speechText.includes('clean')) {
-        type = `CLEAR`;
-      }
+    let speechKeys = speechText.trim().toLocaleLowerCase().split(' ');
+    if (this.isInputSwitch(speechKeys, inputType)) {
+      const foundKey = Object.keys(INST_MAPPINGS).find((instType) => speechKeys.some(key => INST_MAPPINGS[instType].includes(key)));
+      type = `COMMAND_${foundKey.toUpperCase()}`;
     } else {
       type = 'INPUT';
     }
@@ -185,8 +165,8 @@ export class VuiVoiceRecognitionService {
       return instType;
     }
 
-    if (inputType == 'text') {
-      return speechText.replace(/ /g, '');
+    if (inputType == 'text' || inputType == 'address') {
+      return speechText;
     }
 
     if (inputType == 'number') {
@@ -205,20 +185,16 @@ export class VuiVoiceRecognitionService {
         return parsedDates;
       }
     }
-
-    return speechText;
-
+    return null;
   }
 
   dateParser(dateStr: string): Date {
     let parsedDate: Date;
-
     let cleanDateStr = dateStr;
     let dateParts = dateStr.trim().split(' ');
     let datePartObj: any = {};
     let isPureNumber = false;
     let cleanDateParts = [];
-
 
     if (dateParts.length == 3) {
       cleanDateParts = dateParts.map((dateStr) => this.eliminateString(dateStr));
@@ -228,10 +204,7 @@ export class VuiVoiceRecognitionService {
     if (isPureNumber) {
       cleanDateStr = cleanDateParts.join('-');
     } else {
-
       const currentDate = moment();
-      // datePartObj.date = currentDate.format('DD');
-      
       dateParts.forEach((dateStr) => {
         datePartObj = this.parseDatePart(dateStr, datePartObj);
       });
@@ -253,7 +226,6 @@ export class VuiVoiceRecognitionService {
           datePartObj.year = currentDate.format('YYYY');
           datePartObj.date = '01';
       }
-
       cleanDateStr = this.dateBuilder(datePartObj);
     }
     parsedDate = moment(cleanDateStr).toDate();
@@ -394,5 +366,4 @@ export class VuiVoiceRecognitionService {
     }
     return word;
   }
-  
 }

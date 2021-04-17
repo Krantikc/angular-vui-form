@@ -52,7 +52,7 @@ export class VuiDatepickerComponent implements OnInit {
 
     this.vuiService.response.subscribe((data) => {
 
-      if (data.type == 'SWITCH_TO_NEXT') {
+      if (data.type == 'COMMAND_NEXT') {
 
       }
       const currentEl = this.vuiService.inputRefs[0].nativeElement;
@@ -67,7 +67,6 @@ export class VuiDatepickerComponent implements OnInit {
   }
 
   initVoiceRecognition() {
-
 
       this.recognition = new window['webkitSpeechRecognition']();
       this.recognition.continuous = true;
@@ -88,12 +87,11 @@ export class VuiDatepickerComponent implements OnInit {
             interim_transcript += event.results[i][0].transcript;
           }
         }
-
       }
  
-       this.recognition.onend = (event) => {
+      this.recognition.onend = (event) => {
         this.vuiService.interpretSpeech(this.transcript, 'date')[0];
-       }
+      }
   }
 
   startRecognition() {
