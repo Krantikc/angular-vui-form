@@ -635,7 +635,7 @@ let AppComponent = class AppComponent {
             type: 'select'
         };
         this.styleOpts = {
-            animationParse: 'parse-green'
+           
         };
     }
     ngOnInit() {

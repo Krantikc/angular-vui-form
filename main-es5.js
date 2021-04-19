@@ -1037,7 +1037,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           type: 'select'
         };
         this.styleOpts = {
-          animationParse: 'parse-green'
+          
         };
       }
 
