@@ -635,7 +635,6 @@ let AppComponent = class AppComponent {
             type: 'select'
         };
         this.styleOpts = {
-            iconParse: 'icon icon-mic-green',
             animationParse: 'parse-green'
         };
     }

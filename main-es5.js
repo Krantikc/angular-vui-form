@@ -1037,7 +1037,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           type: 'select'
         };
         this.styleOpts = {
-          iconParse: 'icon icon-mic-green',
           animationParse: 'parse-green'
         };
       }
