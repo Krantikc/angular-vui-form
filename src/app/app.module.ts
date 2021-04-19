@@ -15,16 +15,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
 import {ButtonModule} from 'primeng/button';
-import { VuiDatepickerComponent } from './vui-datepicker/vui-datepicker.component';
-import { VuiInputDirective } from './vui-input/vui-input.directive';
-import { VuiInputComponent } from './vui-input/vui-input.component';
+import { NgVoiceInputsModule } from 'ng-voice-inputs';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VuiDatepickerComponent,
-    VuiInputDirective,
-    VuiInputComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +46,8 @@ import { VuiInputComponent } from './vui-input/vui-input.component';
     PaginatorModule,
     ButtonModule,
     MatButtonToggleModule,
-    MatBadgeModule
+    MatBadgeModule,
+    NgVoiceInputsModule
   ],
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
@@ -70,8 +66,6 @@ import { VuiInputComponent } from './vui-input/vui-input.component';
       },
     }
   ],
-  entryComponents: [
-                    VuiDatepickerComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

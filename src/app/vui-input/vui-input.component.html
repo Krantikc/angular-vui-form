@@ -1,4 +1,0 @@
-<div [class]="style.containerClass">
-    <i [class]="style.iconStart" mat-raised-button (click)="startRecognition()" *ngIf="!process"></i>
-    <i [ngClass]="process == 'parsing' ? style.iconParse + ' ' + style.animationParse : style.iconStop + ' ' + style.animationListen" (click)="stopRecognition()" *ngIf="process"></i>
-</div>
