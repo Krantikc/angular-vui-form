@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   endPoint: 'http://localhost:8080/api/v1',
   idleTime: (10 * 60)
-};
+}; 
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -3,3 +3,4 @@ export const environment = {
   endPoint: 'http://localhost:8080/api/v1',
   idleTime: (10 * 60)
 };
+ 

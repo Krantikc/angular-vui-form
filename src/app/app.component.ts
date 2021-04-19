@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
   title = 'AngularStarterProject';
   fDate: any;
 
-  optionsText = {
+  optionsText = { 
     type: 'text'
   }
 

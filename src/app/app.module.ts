@@ -24,7 +24,7 @@ import { NgVoiceInputsModule } from 'ng-voice-inputs';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatCardModule,
+    MatCardModule, 
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
