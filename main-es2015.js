@@ -307,7 +307,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"vui-example\">\r\n    <h1>Voice Based Date Pickers and Text inputs</h1>\r\n\r\n    <div class=\"main-container container\">\r\n        <form class=\"section left-section\" #form=\"ngForm\" (ngSubmit)=\"submitForm(form)\">\r\n            <ng-voice-input (onValueChange)=\"onResponse($event)\" [style]=\"styleOpts\"></ng-voice-input> \r\n            <div class=\"row\">\r\n                <mat-form-field class=\"col-6\">\r\n                    <mat-label>Choose from date</mat-label>\r\n                    <input matInput [matDatepicker]=\"picker\" [vuiInput]=\"optionsDate\" name=\"fromDate\" ngModel>\r\n                    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #picker ></mat-datepicker>\r\n                </mat-form-field>\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>Choose to date</mat-label>\r\n                    <input matInput [matDatepicker]=\"pickerT\" [vuiInput]=\"optionsDate\" name=\"toDate\" ngModel>\r\n                    <mat-datepicker-toggle matSuffix [for]=\"pickerT\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #pickerT ></mat-datepicker>\r\n                </mat-form-field>\r\n            </div>\r\n            <div class=\"row\">\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>First Name</mat-label>\r\n                    <input matInput type=\"text\" [vuiInput]=\"optionsText\" name=\"firstName\" ngModel>\r\n                </mat-form-field>\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>Last Name</mat-label>\r\n                    <input matInput type=\"text\" [vuiInput]=\"optionsText\" name=\"lastName\" ngModel>\r\n                </mat-form-field>\r\n            </div>\r\n\r\n            <div class=\"row\">\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>Age</mat-label>\r\n                    <input matInput type=\"text\" [vuiInput]=\"optionsNumber\" name=\"age\" ngModel>\r\n                </mat-form-field>\r\n\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>Occupation</mat-label>\r\n                    <input matInput type=\"text\" [vuiInput]=\"optionsText\" name=\"occupation\" ngModel>\r\n                </mat-form-field>\r\n                \r\n            </div>\r\n            <div class=\"row\">\r\n                <mat-form-field class=\"col-6\">\r\n                    <mat-label>Address line 1</mat-label>\r\n                    <textarea matInput type=\"text\" [vuiInput]=\"optionsAddress\" name=\"address-line1\"></textarea>\r\n                </mat-form-field>  \r\n                <mat-form-field class=\"col-6\">\r\n                    <mat-label>Address line 2</mat-label>\r\n                    <textarea matInput type=\"text\" [vuiInput]=\"optionsAddress\" name=\"address-line2\"></textarea>\r\n                </mat-form-field>    \r\n            </div>\r\n\r\n            <button mat-raised-button [vuiInput]=\"\">Submit</button>\r\n            \r\n        </form>\r\n\r\n        <div class=\"section right-section\">\r\n            <h3>Usage</h3>\r\n            <ul> \r\n                <li>Click on <b>Mic (<i class=\"icon icon-small icon-mic\"></i>)</b> button, to begin voice recongnition</li>\r\n                <li>Say something like\r\n                    <ul>\r\n                        <li>'January 21st 2021'</li>\r\n                        <li>'August 15th 1947'</li>\r\n                        <li>'November 27 2021'</li>\r\n                    </ul>\r\n                </li>\r\n                <li>Once datepicker field is filled, you can navigate the focus to next input field by saying <b>'go to next'</b> or <b>'next'</b></li>\r\n                <li>And go back to previous input field by saying <b>'go to previous'</b></li>\r\n                <li>Once finished entering all the fields, navigaten to <b>Submit</b> button by saying <b>'go to last'</b> and say <b>'submit' or 'click'</b> to submit the form</li>\r\n                <li>You can STOP speech recognition by saying <b>'stop'</b> or by clicking the mic icon again.</li>\r\n            </ul>\r\n\r\n            <div><i>NOTE:</i> For the input type <b>'address'</b>, please use prefixes like <b>'go'</b> or <b>'goto'</b> or <b>'switch to'</b> without fail</div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"container form-submit-data col-md-6\" *ngIf=\"formData\">\r\n        <h4>Form Submit Details</h4>\r\n        <div class=\"row\">\r\n            <div class=\"col-6\">\r\n                <label>Start Date</label>\r\n                <span>{{formData?.startDate}}</span>\r\n            </div>\r\n            <div class=\"col-6\">\r\n                <label>End Date</label>\r\n                <span>{{formData?.endDate}}</span>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-6\">\r\n                <label>First Name</label>\r\n                <span>{{formData?.firstName}}</span>\r\n            </div>\r\n            <div class=\"col-6\">\r\n                <label>Last Name</label>\r\n                <span>{{formData?.lastName}}</span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"vui-example\">\r\n    <h1>Voice Based Date Pickers and Text inputs\r\n        <div style=\"\r\n                display: flex;\r\n                justify-content: center;\r\n                padding: 10px 0;\r\n        \">\r\n            <a href=\"https://www.npmjs.com/package/ng-voice-inputs\">\r\n                <img src=\"https://img.shields.io/npm/v/ng-voice-inputs.svg\" />\r\n            </a>\r\n        </div>\r\n    </h1>\r\n\r\n    <div class=\"main-container container\">\r\n        <form class=\"section left-section\" #form=\"ngForm\" (ngSubmit)=\"submitForm(form)\">\r\n            <ng-voice-input (onValueChange)=\"onResponse($event)\" [style]=\"styleOpts\"></ng-voice-input>\r\n            <div class=\"row\">\r\n                <mat-form-field class=\"col-6\">\r\n                    <mat-label>Choose from date</mat-label>\r\n                    <input matInput [matDatepicker]=\"picker\" [vuiInput]=\"optionsDate\" name=\"fromDate\" ngModel>\r\n                    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #picker ></mat-datepicker>\r\n                </mat-form-field>\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>Choose to date</mat-label>\r\n                    <input matInput [matDatepicker]=\"pickerT\" [vuiInput]=\"optionsDate\" name=\"toDate\" ngModel>\r\n                    <mat-datepicker-toggle matSuffix [for]=\"pickerT\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #pickerT ></mat-datepicker>\r\n                </mat-form-field>\r\n            </div>\r\n            <div class=\"row\">\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>First Name</mat-label>\r\n                    <input matInput type=\"text\" [vuiInput]=\"optionsText\" name=\"firstName\" ngModel>\r\n                </mat-form-field>\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>Last Name</mat-label>\r\n                    <input matInput type=\"text\" [vuiInput]=\"optionsText\" name=\"lastName\" ngModel>\r\n                </mat-form-field>\r\n            </div>\r\n\r\n            <div class=\"row\">\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>Age</mat-label>\r\n                    <input matInput type=\"text\" [vuiInput]=\"optionsNumber\" name=\"age\" ngModel>\r\n                </mat-form-field>\r\n\r\n                <mat-form-field  class=\"col-6\">\r\n                    <mat-label>Occupation</mat-label>\r\n                    <input matInput type=\"text\" [vuiInput]=\"optionsText\" name=\"occupation\" ngModel>\r\n                </mat-form-field>\r\n                \r\n            </div>\r\n            <div class=\"row\">\r\n                <mat-form-field class=\"col-6\">\r\n                    <mat-label>Address line 1</mat-label>\r\n                    <textarea matInput type=\"text\" [vuiInput]=\"optionsAddress\" name=\"address-line1\"></textarea>\r\n                </mat-form-field>  \r\n                <mat-form-field class=\"col-6\">\r\n                    <mat-label>Address line 2</mat-label>\r\n                    <textarea matInput type=\"text\" [vuiInput]=\"optionsAddress\" name=\"address-line2\"></textarea>\r\n                </mat-form-field>    \r\n            </div>\r\n            <button mat-raised-button [vuiInput]=\"\">Submit</button>\r\n            \r\n        </form>\r\n\r\n        <div class=\"section right-section\">\r\n            <h3>Usage</h3>\r\n            <ul>\r\n                <li>Click on <b>Mic (<i class=\"icon icon-small icon-mic-blue\"></i>)</b> button, to begin voice recongnition</li>\r\n                <li>Say something like\r\n                    <ul>\r\n                        <li>'January 21st 2021'</li>\r\n                        <li>'August 15th 1947'</li>\r\n                        <li>'November 27 2021'</li>\r\n                    </ul>\r\n                </li>\r\n                <li>Once datepicker field is filled, you can navigate the focus to next input field by saying <b>'go to next'</b> or <b>'next'</b></li>\r\n                <li>And go back to previous input field by saying <b>'go to previous'</b></li>\r\n                <li>Once finished entering all the fields, navigaten to <b>Submit</b> button by saying <b>'go to last'</b> and say <b>'submit' or 'click'</b> to submit the form</li>\r\n                <li><b>Page Scroll Feature</b>: \r\n                <li>Say <b>Scroll Down</b> to scroll page downwards. And <b>Scroll Up</b> to scroll upwards. Also supports <b>Left</b> & <b>Right</b></li>\r\n                <li>Say <b>Continue Scrolling</b> to scroll continuously downwards / upwards.</li>\r\n                \r\n                <li>You can STOP speech recognition by saying <b>'stop'</b> or by clicking the mic icon again.</li>\r\n            </ul>\r\n\r\n            <div><i>NOTE:</i> For the input type <b>'address'</b>, please use prefixes like <b>'go'</b> or <b>'goto'</b> or <b>'switch to'</b> without fail</div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"container form-submit-data col-md-6\" *ngIf=\"formData\">\r\n        <h4>Form Submit Details</h4>\r\n        <div class=\"row\">\r\n            <div class=\"col-6\">\r\n                <label>Start Date</label>\r\n                <span>{{formData?.startDate}}</span>\r\n            </div>\r\n            <div class=\"col-6\">\r\n                <label>End Date</label>\r\n                <span>{{formData?.endDate}}</span>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-6\">\r\n                <label>First Name</label>\r\n                <span>{{formData?.firstName}}</span>\r\n            </div>\r\n            <div class=\"col-6\">\r\n                <label>Last Name</label>\r\n                <span>{{formData?.lastName}}</span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"container speech-recognition-info col-md-8\">\r\n        <h3>Speech Recognition</h3>\r\n        <p>\r\n            Speech recognition is an interdisciplinary subfield of computer science and computational linguistics that develops methodologies and technologies that enable the recognition and translation of spoken language into text by computers. It is also known as automatic speech recognition (ASR), computer speech recognition or speech to text (STT). It incorporates knowledge and research in the computer science, linguistics and computer engineering fields.\r\n            Some speech recognition systems require \"training\" (also called \"enrollment\") where an individual speaker reads text or isolated vocabulary into the system. The system analyzes the person's specific voice and uses it to fine-tune the recognition of that person's speech, resulting in increased accuracy. Systems that do not use training are called \"speaker independent\"[1] systems. Systems that use training are called \"speaker dependent\".\r\n            Speech recognition applications include voice user interfaces such as voice dialing (e.g. \"call home\"), call routing (e.g. \"I would like to make a collect call\"), domotic appliance control, search key words (e.g. find a podcast where particular words were spoken), simple data entry (e.g., entering a credit card number), preparation of structured documents (e.g. a radiology report), determining speaker characteristics,[2] speech-to-text processing (e.g., word processors or emails), and aircraft (usually termed direct voice input).\r\n            The term voice recognition[3][4][5] or speaker identification[6][7][8] refers to identifying the speaker, rather than what they are saying. Recognizing the speaker can simplify the task of translating speech in systems that have been trained on a specific person's voice or it can be used to authenticate or verify the identity of a speaker as part of a security process.\r\n            From the technology perspective, speech recognition has a long history with several waves of major innovations. Most recently, the field has benefited from advances in deep learning and big data. The advances are evidenced not only by the surge of academic papers published in the field, but more importantly by the worldwide industry adoption of a variety of deep learning methods in designing and deploying speech recognition systems.\r\n        </p>\r\n\r\n        <p>\r\n            The 1980s also saw the introduction of the n-gram language model.\r\n            1987 – The back-off model allowed language models to use multiple length n-grams, and CSELT used HMM to recognize languages (both in software and in hardware specialized processors, e.g. RIPAC).\r\n            Much of the progress in the field is owed to the rapidly increasing capabilities of computers. At the end of the DARPA program in 1976, the best computer available to researchers was the PDP-10 with 4 MB ram.[23] It could take up to 100 minutes to decode just 30 seconds of speech.[26]\r\n            Two practical products were:\r\n\r\n            1987 – a recognizer from Kurzweil Applied Intelligence\r\n            1990 – Dragon Dictate, a consumer product released in 1990[27][28] AT&T deployed the Voice Recognition Call Processing service in 1992 to route telephone calls without the use of a human operator.[29] The technology was developed by Lawrence Rabiner and others at Bell Labs.\r\n            By this point, the vocabulary of the typical commercial speech recognition system was larger than the average human vocabulary.[23] Raj Reddy's former student, Xuedong Huang, developed the Sphinx-II system at CMU. The Sphinx-II system was the first to do speaker-independent, large vocabulary, continuous speech recognition and it had the best performance in DARPA's 1992 evaluation. Handling continuous speech with a large vocabulary was a major milestone in the history of speech recognition. Huang went on to found the speech recognition group at Microsoft in 1993. Raj Reddy's student Kai-Fu Lee joined Apple where, in 1992, he helped develop a speech interface prototype for the Apple computer known as Casper.\r\n\r\n            Lernout & Hauspie, a Belgium-based speech recognition company, acquired several other companies, including Kurzweil Applied Intelligence in 1997 and Dragon Systems in 2000. The L&H speech technology was used in the Windows XP operating system. L&H was an industry leader until an accounting scandal brought an end to the company in 2001. The speech technology from L&H was bought by ScanSoft which became Nuance in 2005. Apple originally licensed software from Nuance to provide speech recognition capability to its digital assistant Siri.[30]\r\n\r\n            2000s\r\n            In the 2000s DARPA sponsored two speech recognition programs: Effective Affordable Reusable Speech-to-Text (EARS) in 2002 and Global Autonomous Language Exploitation (GALE). Four teams participated in the EARS program: IBM, a team led by BBN with LIMSI and Univ. of Pittsburgh, Cambridge University, and a team composed of ICSI, SRI and University of Washington. EARS funded the collection of the Switchboard telephone speech corpus containing 260 hours of recorded conversations from over 500 speakers.[31] The GALE program focused on Arabic and Mandarin broadcast news speech. Google's first effort at speech recognition came in 2007 after hiring some researchers from Nuance.[32] The first product was GOOG-411, a telephone based directory service. The recordings from GOOG-411 produced valuable data that helped Google improve their recognition systems. Google Voice Search is now supported in over 30 languages.\r\n\r\n            In the United States, the National Security Agency has made use of a type of speech recognition for keyword spotting since at least 2006.[33] This technology allows analysts to search through large volumes of recorded conversations and isolate mentions of keywords. Recordings can be indexed and analysts can run queries over the database to find conversations of interest. Some government research programs focused on intelligence applications of speech recognition, e.g. DARPA's EARS's program and IARPA's Babel program.\r\n\r\n            In the early 2000s, speech recognition was still dominated by traditional approaches such as Hidden Markov Models combined with feedforward artificial neural networks.[34] Today, however, many aspects of speech recognition have been taken over by a deep learning method called Long short-term memory (LSTM), a recurrent neural network published by Sepp Hochreiter & Jürgen Schmidhuber in 1997.[35] LSTM RNNs avoid the vanishing gradient problem and can learn \"Very Deep Learning\" tasks[36] that require memories of events that happened thousands of discrete time steps ago, which is important for speech. Around 2007, LSTM trained by Connectionist Temporal Classification (CTC)[37] started to outperform traditional speech recognition in certain applications.[38] In 2015, Google's speech recognition reportedly experienced a dramatic performance jump of 49% through CTC-trained LSTM, which is now available through Google Voice to all smartphone users.[39]\r\n\r\n            The use of deep feedforward (non-recurrent) networks for acoustic modeling was introduced during later part of 2009 by Geoffrey Hinton and his students at University of Toronto and by Li Deng[40] and colleagues at Microsoft Research, initially in the collaborative work between Microsoft and University of Toronto which was subsequently expanded to include IBM and Google (hence \"The shared views of four research groups\" subtitle in their 2012 review paper).[41][42][43] A Microsoft research executive called this innovation \"the most dramatic change in accuracy since 1979\".[44] In contrast to the steady incremental improvements of the past few decades, the application of deep learning decreased word error rate by 30%.[44] This innovation was quickly adopted across the field. Researchers have begun to use deep learning techniques for language modeling as well.\r\n\r\n            In the long history of speech recognition, both shallow form and deep form (e.g. recurrent nets) of artificial neural networks had been explored for many years during 1980s, 1990s and a few years into the 2000s.[45][46][47] But these methods never won over the non-uniform internal-handcrafting Gaussian mixture model/Hidden Markov model (GMM-HMM) technology based on generative models of speech trained discriminatively.[48] A number of key difficulties had been methodologically analyzed in the 1990s, including gradient diminishing[49] and weak temporal correlation structure in the neural predictive models.[50][51] All these difficulties were in addition to the lack of big training data and big computing power in these early days. Most speech recognition researchers who understood such barriers hence subsequently moved away from neural nets to pursue generative modeling approaches until the recent resurgence of deep learning starting around 2009–2010 that had overcome all these difficulties. Hinton et al. and Deng et al. reviewed part of this recent history about how their collaboration with each other and then with colleagues across four groups (University of Toronto, Microsoft, Google, and IBM) ignited a renaissance of applications of deep feedforward neural networks to speech recognition.[42][43][52][53]\r\n\r\n            2010s\r\n            By early 2010s speech recognition, also called voice recognition[54][55][56] was clearly differentiated from speaker recognition, and speaker independence was considered a major breakthrough. Until then, systems required a \"training\" period. A 1987 ad for a doll had carried the tagline \"Finally, the doll that understands you.\" – despite the fact that it was described as \"which children could train to respond to their voice\".[12]\r\n\r\n            In 2017, Microsoft researchers reached a historical human parity milestone of transcribing conversational telephony speech on the widely benchmarked Switchboard task. Multiple deep learning models were used to optimize speech recognition accuracy. The speech recognition word error rate was reported to be as low as 4 professional human transcribers working together on the same benchmark, which was funded by IBM Watson speech team on the same task.[57]\r\n        </p>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
@@ -597,7 +597,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".vui-example h1 {\n  font-size: 28px;\n  text-align: center;\n  padding: 20px;\n  color: #0a9d9d;\n  margin-bottom: 30px;\n  background: #ecfff9;\n  border-bottom: 3px solid #aaffe4;\n}\n.vui-example .main-container {\n  display: flex;\n  justify-content: space-between;\n}\n.vui-example .main-container .left-section {\n  width: 80%;\n  margin-right: 30px;\n  padding: 0 30px;\n  border-right: 1px solid #EBEBEB;\n}\n.vui-example .main-container .right-section {\n  background: #fdffdc;\n  padding: 20px;\n}\n.vui-example .form-submit-data {\n  background: #ecfff9;\n  padding: 20px;\n  margin-top: 20px;\n}\n@media (max-width: 768px) {\n  .vui-example .main-container {\n    flex-direction: column;\n  }\n  .vui-example .main-container .left-section {\n    width: 100%;\n    margin: 0 0 20px 0;\n    border: 0;\n  }\n}\n:host ::ng-deep .icon.parse-green::after {\n  opacity: 0;\n  position: absolute;\n  top: -5px;\n  left: -5px;\n  right: 0;\n  bottom: 0;\n  content: \"\";\n  border: 3px solid #05c54f;\n  border-radius: 100%;\n  -webkit-animation-name: ripple;\n          animation-name: ripple;\n  -webkit-animation-duration: 0.5s;\n          animation-duration: 0.5s;\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n          animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n  z-index: -1;\n}\n:host ::ng-deep .icon.parse-green::before {\n  opacity: 0;\n  position: absolute;\n  top: -5px;\n  left: -5px;\n  right: 0;\n  bottom: 0;\n  content: \"\";\n  border: 3px solid #00722c;\n  border-radius: 100%;\n  -webkit-animation-name: ripple;\n          animation-name: ripple;\n  -webkit-animation-duration: 1s;\n          animation-duration: 1s;\n  -webkit-animation-delay: 0.3s;\n          animation-delay: 0.3s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n          animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n  z-index: -1;\n}\n:host ::ng-deep .icon.listen-green::after {\n  opacity: 0;\n  position: absolute;\n  top: -5px;\n  left: -5px;\n  right: 0;\n  bottom: 0;\n  content: \"\";\n  border: 3px solid #05c54f;\n  border-radius: 100%;\n  -webkit-animation-name: ripple;\n          animation-name: ripple;\n  -webkit-animation-duration: 5s;\n          animation-duration: 5s;\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n          animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n  z-index: -1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFdvcmtzcGFjZVxcUGVyc29uYWxcXGFuZ3VsYXItdnVpLWZvcm0vc3JjXFxhcHBcXGFwcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNJO0VBQ0ksZUFBQTtFQUNBLGtCQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxtQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0NBQUE7QUNBUjtBREVJO0VBQ0ksYUFBQTtFQUNBLDhCQUFBO0FDQVI7QURFUTtFQUNJLFVBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSwrQkFBQTtBQ0FaO0FER1E7RUFDSSxtQkFBQTtFQUNBLGFBQUE7QUNEWjtBREtJO0VBQ0ksbUJBQUE7RUFDQSxhQUFBO0VBQ0EsZ0JBQUE7QUNIUjtBRE9BO0VBRVE7SUFDSSxzQkFBQTtFQ0xWO0VETVU7SUFDSSxXQUFBO0lBQ0Esa0JBQUE7SUFDQSxTQUFBO0VDSmQ7QUFDRjtBRDZCUTtFQW5CSixVQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsV0FBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtVQUFBLHNCQUFBO0VBQ0EsZ0NBVXVCO1VBVnZCLHdCQVV1QjtFQVR2QiwyQkFTNkI7VUFUN0IsbUJBUzZCO0VBUjdCLDJDQUFBO1VBQUEsbUNBQUE7RUFDQSxpRUFBQTtVQUFBLHlEQUFBO0VBQ0EsV0FBQTtBQ1BKO0FEZVE7RUF0QkosVUFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsOEJBQUE7VUFBQSxzQkFBQTtFQUNBLDhCQWF1QjtVQWJ2QixzQkFhdUI7RUFadkIsNkJBWTJCO1VBWjNCLHFCQVkyQjtFQVgzQiwyQ0FBQTtVQUFBLG1DQUFBO0VBQ0EsaUVBQUE7VUFBQSx5REFBQTtFQUNBLFdBQUE7QUNVSjtBRElRO0VBNUJKLFVBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO1VBQUEsc0JBQUE7RUFDQSw4QkFtQnVCO1VBbkJ2QixzQkFtQnVCO0VBbEJ2QiwyQkFrQjJCO1VBbEIzQixtQkFrQjJCO0VBakIzQiwyQ0FBQTtVQUFBLG1DQUFBO0VBQ0EsaUVBQUE7VUFBQSx5REFBQTtFQUNBLFdBQUE7QUMyQkoiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudnVpLWV4YW1wbGUge1xyXG4gICAgaDEge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjhweDtcclxuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgcGFkZGluZzogMjBweDtcclxuICAgICAgICBjb2xvcjogIzBhOWQ5ZDsgXHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMzBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAjZWNmZmY5O1xyXG4gICAgICAgIGJvcmRlci1ib3R0b206IDNweCBzb2xpZCAjYWFmZmU0O1xyXG4gICAgfVxyXG4gICAgLm1haW4tY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuXHJcbiAgICAgICAgLmxlZnQtc2VjdGlvbiB7XHJcbiAgICAgICAgICAgIHdpZHRoOiA4MCU7XHJcbiAgICAgICAgICAgIG1hcmdpbi1yaWdodDogMzBweDtcclxuICAgICAgICAgICAgcGFkZGluZzogMCAzMHB4O1xyXG4gICAgICAgICAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjRUJFQkVCO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLnJpZ2h0LXNlY3Rpb24ge1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiAjZmRmZmRjO1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuZm9ybS1zdWJtaXQtZGF0YSB7XHJcbiAgICAgICAgYmFja2dyb3VuZDogI2VjZmZmOTtcclxuICAgICAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbkBtZWRpYSAobWF4LXdpZHRoOiA3NjhweCkge1xyXG4gICAgLnZ1aS1leGFtcGxlIHtcclxuICAgICAgICAubWFpbi1jb250YWluZXIge1xyXG4gICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgICAgICAubGVmdC1zZWN0aW9uIHtcclxuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luOiAwIDAgMjBweCAwO1xyXG4gICAgICAgICAgICAgICAgYm9yZGVyOiAwO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59XHJcblxyXG5AbWl4aW4gcmluZ3MoJGR1cmF0aW9uLCAkZGVsYXksICRjb2xvcikge1xyXG4gICAgb3BhY2l0eTogMDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogLTVweDtcclxuICAgIGxlZnQ6IC01cHg7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgYm9yZGVyOiAzcHggc29saWQgJGNvbG9yO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTAwJTtcclxuICAgIGFuaW1hdGlvbi1uYW1lOiByaXBwbGU7XHJcbiAgICBhbmltYXRpb24tZHVyYXRpb246ICRkdXJhdGlvbjtcclxuICAgIGFuaW1hdGlvbi1kZWxheTogJGRlbGF5O1xyXG4gICAgYW5pbWF0aW9uLWl0ZXJhdGlvbi1jb3VudDogaW5maW5pdGU7XHJcbiAgICBhbmltYXRpb24tdGltaW5nLWZ1bmN0aW9uOiBjdWJpYy1iZXppZXIoLjY1LDAsLjM0LDEpO1xyXG4gICAgei1pbmRleDogLTE7XHJcbn1cclxuXHJcbjpob3N0IDo6bmctZGVlcCAuaWNvbiB7XHJcbiAgICAmLnBhcnNlLWdyZWVuIHtcclxuICAgICAgICAmOjphZnRlciB7XHJcbiAgICAgICAgICAgIEBpbmNsdWRlIHJpbmdzKDAuNXMsIDBzLCAjMDVjNTRmKTtcclxuICAgICAgICB9XHJcbiAgICAgICAgJjo6YmVmb3JlIHtcclxuICAgICAgICAgICAgQGluY2x1ZGUgcmluZ3MoMXMsIDAuM3MsICMwMDcyMmMpO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAmLmxpc3Rlbi1ncmVlbiB7XHJcbiAgICAgICAgJjo6YWZ0ZXIge1xyXG4gICAgICAgICAgICBAaW5jbHVkZSByaW5ncyg1cywgMHMsICMwNWM1NGYpO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufSIsIi52dWktZXhhbXBsZSBoMSB7XG4gIGZvbnQtc2l6ZTogMjhweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nOiAyMHB4O1xuICBjb2xvcjogIzBhOWQ5ZDtcbiAgbWFyZ2luLWJvdHRvbTogMzBweDtcbiAgYmFja2dyb3VuZDogI2VjZmZmOTtcbiAgYm9yZGVyLWJvdHRvbTogM3B4IHNvbGlkICNhYWZmZTQ7XG59XG4udnVpLWV4YW1wbGUgLm1haW4tY29udGFpbmVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuLnZ1aS1leGFtcGxlIC5tYWluLWNvbnRhaW5lciAubGVmdC1zZWN0aW9uIHtcbiAgd2lkdGg6IDgwJTtcbiAgbWFyZ2luLXJpZ2h0OiAzMHB4O1xuICBwYWRkaW5nOiAwIDMwcHg7XG4gIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNFQkVCRUI7XG59XG4udnVpLWV4YW1wbGUgLm1haW4tY29udGFpbmVyIC5yaWdodC1zZWN0aW9uIHtcbiAgYmFja2dyb3VuZDogI2ZkZmZkYztcbiAgcGFkZGluZzogMjBweDtcbn1cbi52dWktZXhhbXBsZSAuZm9ybS1zdWJtaXQtZGF0YSB7XG4gIGJhY2tncm91bmQ6ICNlY2ZmZjk7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA3NjhweCkge1xuICAudnVpLWV4YW1wbGUgLm1haW4tY29udGFpbmVyIHtcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICB9XG4gIC52dWktZXhhbXBsZSAubWFpbi1jb250YWluZXIgLmxlZnQtc2VjdGlvbiB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgbWFyZ2luOiAwIDAgMjBweCAwO1xuICAgIGJvcmRlcjogMDtcbiAgfVxufVxuOmhvc3QgOjpuZy1kZWVwIC5pY29uLnBhcnNlLWdyZWVuOjphZnRlciB7XG4gIG9wYWNpdHk6IDA7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtNXB4O1xuICBsZWZ0OiAtNXB4O1xuICByaWdodDogMDtcbiAgYm90dG9tOiAwO1xuICBjb250ZW50OiBcIlwiO1xuICBib3JkZXI6IDNweCBzb2xpZCAjMDVjNTRmO1xuICBib3JkZXItcmFkaXVzOiAxMDAlO1xuICBhbmltYXRpb24tbmFtZTogcmlwcGxlO1xuICBhbmltYXRpb24tZHVyYXRpb246IDAuNXM7XG4gIGFuaW1hdGlvbi1kZWxheTogMHM7XG4gIGFuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6IGluZmluaXRlO1xuICBhbmltYXRpb24tdGltaW5nLWZ1bmN0aW9uOiBjdWJpYy1iZXppZXIoMC42NSwgMCwgMC4zNCwgMSk7XG4gIHotaW5kZXg6IC0xO1xufVxuOmhvc3QgOjpuZy1kZWVwIC5pY29uLnBhcnNlLWdyZWVuOjpiZWZvcmUge1xuICBvcGFjaXR5OiAwO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogLTVweDtcbiAgbGVmdDogLTVweDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgY29udGVudDogXCJcIjtcbiAgYm9yZGVyOiAzcHggc29saWQgIzAwNzIyYztcbiAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgYW5pbWF0aW9uLW5hbWU6IHJpcHBsZTtcbiAgYW5pbWF0aW9uLWR1cmF0aW9uOiAxcztcbiAgYW5pbWF0aW9uLWRlbGF5OiAwLjNzO1xuICBhbmltYXRpb24taXRlcmF0aW9uLWNvdW50OiBpbmZpbml0ZTtcbiAgYW5pbWF0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuNjUsIDAsIDAuMzQsIDEpO1xuICB6LWluZGV4OiAtMTtcbn1cbjpob3N0IDo6bmctZGVlcCAuaWNvbi5saXN0ZW4tZ3JlZW46OmFmdGVyIHtcbiAgb3BhY2l0eTogMDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IC01cHg7XG4gIGxlZnQ6IC01cHg7XG4gIHJpZ2h0OiAwO1xuICBib3R0b206IDA7XG4gIGNvbnRlbnQ6IFwiXCI7XG4gIGJvcmRlcjogM3B4IHNvbGlkICMwNWM1NGY7XG4gIGJvcmRlci1yYWRpdXM6IDEwMCU7XG4gIGFuaW1hdGlvbi1uYW1lOiByaXBwbGU7XG4gIGFuaW1hdGlvbi1kdXJhdGlvbjogNXM7XG4gIGFuaW1hdGlvbi1kZWxheTogMHM7XG4gIGFuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6IGluZmluaXRlO1xuICBhbmltYXRpb24tdGltaW5nLWZ1bmN0aW9uOiBjdWJpYy1iZXppZXIoMC42NSwgMCwgMC4zNCwgMSk7XG4gIHotaW5kZXg6IC0xO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".vui-example h1 {\n  font-size: 28px;\n  text-align: center;\n  padding: 20px;\n  color: #0a9d9d;\n  margin-bottom: 30px;\n  background: #ecfff9;\n  border-bottom: 3px solid #aaffe4;\n}\n.vui-example .main-container {\n  display: flex;\n  justify-content: space-between;\n}\n.vui-example .main-container .left-section {\n  width: 80%;\n  margin-right: 30px;\n  padding: 0 30px;\n  border-right: 1px solid #EBEBEB;\n}\n.vui-example .main-container .right-section {\n  background: #fdffdc;\n  padding: 20px;\n}\n.vui-example .form-submit-data {\n  background: #ecfff9;\n  padding: 20px;\n  margin-top: 20px;\n}\n.vui-example .speech-recognition-info {\n  padding: 30px 0;\n}\n.vui-example .speech-recognition-info h3 {\n  text-align: center;\n}\n@media (max-width: 768px) {\n  .vui-example .main-container {\n    flex-direction: column;\n  }\n  .vui-example .main-container .left-section {\n    width: 100%;\n    margin: 0 0 20px 0;\n    border: 0;\n  }\n}\n:host ::ng-deep .icon.parse-green::after {\n  opacity: 0;\n  position: absolute;\n  top: -5px;\n  left: -5px;\n  right: 0;\n  bottom: 0;\n  content: \"\";\n  border: 3px solid #05c54f;\n  border-radius: 100%;\n  -webkit-animation-name: ripple;\n          animation-name: ripple;\n  -webkit-animation-duration: 0.5s;\n          animation-duration: 0.5s;\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n          animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n  z-index: -1;\n}\n:host ::ng-deep .icon.parse-green::before {\n  opacity: 0;\n  position: absolute;\n  top: -5px;\n  left: -5px;\n  right: 0;\n  bottom: 0;\n  content: \"\";\n  border: 3px solid #00722c;\n  border-radius: 100%;\n  -webkit-animation-name: ripple;\n          animation-name: ripple;\n  -webkit-animation-duration: 1s;\n          animation-duration: 1s;\n  -webkit-animation-delay: 0.3s;\n          animation-delay: 0.3s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n          animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n  z-index: -1;\n}\n:host ::ng-deep .icon.listen-green::after {\n  opacity: 0;\n  position: absolute;\n  top: -5px;\n  left: -5px;\n  right: 0;\n  bottom: 0;\n  content: \"\";\n  border: 3px solid #05c54f;\n  border-radius: 100%;\n  -webkit-animation-name: ripple;\n          animation-name: ripple;\n  -webkit-animation-duration: 5s;\n          animation-duration: 5s;\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n          animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n  z-index: -1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFdvcmtzcGFjZVxcUGVyc29uYWxcXE5nVm9pY2VJbnB1dHMvc3JjXFxhcHBcXGFwcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNJO0VBQ0ksZUFBQTtFQUNBLGtCQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxtQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0NBQUE7QUNBUjtBREVJO0VBQ0ksYUFBQTtFQUNBLDhCQUFBO0FDQVI7QURFUTtFQUNJLFVBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSwrQkFBQTtBQ0FaO0FER1E7RUFDSSxtQkFBQTtFQUNBLGFBQUE7QUNEWjtBREtJO0VBQ0ksbUJBQUE7RUFDQSxhQUFBO0VBQ0EsZ0JBQUE7QUNIUjtBRE1JO0VBQ0ksZUFBQTtBQ0pSO0FETVE7RUFDSSxrQkFBQTtBQ0paO0FEU0E7RUFFUTtJQUNJLHNCQUFBO0VDUFY7RURRVTtJQUNJLFdBQUE7SUFDQSxrQkFBQTtJQUNBLFNBQUE7RUNOZDtBQUNGO0FEK0JRO0VBbkJKLFVBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO1VBQUEsc0JBQUE7RUFDQSxnQ0FVdUI7VUFWdkIsd0JBVXVCO0VBVHZCLDJCQVM2QjtVQVQ3QixtQkFTNkI7RUFSN0IsMkNBQUE7VUFBQSxtQ0FBQTtFQUNBLGlFQUFBO1VBQUEseURBQUE7RUFDQSxXQUFBO0FDVEo7QURpQlE7RUF0QkosVUFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsOEJBQUE7VUFBQSxzQkFBQTtFQUNBLDhCQWF1QjtVQWJ2QixzQkFhdUI7RUFadkIsNkJBWTJCO1VBWjNCLHFCQVkyQjtFQVgzQiwyQ0FBQTtVQUFBLG1DQUFBO0VBQ0EsaUVBQUE7VUFBQSx5REFBQTtFQUNBLFdBQUE7QUNRSjtBRE1RO0VBNUJKLFVBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO1VBQUEsc0JBQUE7RUFDQSw4QkFtQnVCO1VBbkJ2QixzQkFtQnVCO0VBbEJ2QiwyQkFrQjJCO1VBbEIzQixtQkFrQjJCO0VBakIzQiwyQ0FBQTtVQUFBLG1DQUFBO0VBQ0EsaUVBQUE7VUFBQSx5REFBQTtFQUNBLFdBQUE7QUN5QkoiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudnVpLWV4YW1wbGUge1xyXG4gICAgaDEge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjhweDtcclxuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgcGFkZGluZzogMjBweDtcclxuICAgICAgICBjb2xvcjogIzBhOWQ5ZDtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAzMHB4O1xyXG4gICAgICAgIGJhY2tncm91bmQ6ICNlY2ZmZjk7XHJcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogM3B4IHNvbGlkICNhYWZmZTQ7XHJcbiAgICB9XHJcbiAgICAubWFpbi1jb250YWluZXIge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cclxuICAgICAgICAubGVmdC1zZWN0aW9uIHtcclxuICAgICAgICAgICAgd2lkdGg6IDgwJTtcclxuICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiAzMHB4O1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAwIDMwcHg7XHJcbiAgICAgICAgICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNFQkVCRUI7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAucmlnaHQtc2VjdGlvbiB7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQ6ICNmZGZmZGM7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5mb3JtLXN1Ym1pdC1kYXRhIHtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAjZWNmZmY5O1xyXG4gICAgICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMjBweDtcclxuICAgIH1cclxuXHJcbiAgICAuc3BlZWNoLXJlY29nbml0aW9uLWluZm8ge1xyXG4gICAgICAgIHBhZGRpbmc6IDMwcHggMDtcclxuXHJcbiAgICAgICAgaDMge1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHtcclxuICAgIC52dWktZXhhbXBsZSB7XHJcbiAgICAgICAgLm1haW4tY29udGFpbmVyIHtcclxuICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICAgICAgLmxlZnQtc2VjdGlvbiB7XHJcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICAgICAgICAgIG1hcmdpbjogMCAwIDIwcHggMDtcclxuICAgICAgICAgICAgICAgIGJvcmRlcjogMDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG5cclxuQG1peGluIHJpbmdzKCRkdXJhdGlvbiwgJGRlbGF5LCAkY29sb3IpIHtcclxuICAgIG9wYWNpdHk6IDA7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IC01cHg7XHJcbiAgICBsZWZ0OiAtNXB4O1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICBjb250ZW50OiAnJztcclxuICAgIGJvcmRlcjogM3B4IHNvbGlkICRjb2xvcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwMCU7XHJcbiAgICBhbmltYXRpb24tbmFtZTogcmlwcGxlO1xyXG4gICAgYW5pbWF0aW9uLWR1cmF0aW9uOiAkZHVyYXRpb247XHJcbiAgICBhbmltYXRpb24tZGVsYXk6ICRkZWxheTtcclxuICAgIGFuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6IGluZmluaXRlO1xyXG4gICAgYW5pbWF0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKC42NSwwLC4zNCwxKTtcclxuICAgIHotaW5kZXg6IC0xO1xyXG59XHJcblxyXG46aG9zdCA6Om5nLWRlZXAgLmljb24ge1xyXG4gICAgJi5wYXJzZS1ncmVlbiB7XHJcbiAgICAgICAgJjo6YWZ0ZXIge1xyXG4gICAgICAgICAgICBAaW5jbHVkZSByaW5ncygwLjVzLCAwcywgIzA1YzU0Zik7XHJcbiAgICAgICAgfVxyXG4gICAgICAgICY6OmJlZm9yZSB7XHJcbiAgICAgICAgICAgIEBpbmNsdWRlIHJpbmdzKDFzLCAwLjNzLCAjMDA3MjJjKTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgJi5saXN0ZW4tZ3JlZW4ge1xyXG4gICAgICAgICY6OmFmdGVyIHtcclxuICAgICAgICAgICAgQGluY2x1ZGUgcmluZ3MoNXMsIDBzLCAjMDVjNTRmKTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn0iLCIudnVpLWV4YW1wbGUgaDEge1xuICBmb250LXNpemU6IDI4cHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcGFkZGluZzogMjBweDtcbiAgY29sb3I6ICMwYTlkOWQ7XG4gIG1hcmdpbi1ib3R0b206IDMwcHg7XG4gIGJhY2tncm91bmQ6ICNlY2ZmZjk7XG4gIGJvcmRlci1ib3R0b206IDNweCBzb2xpZCAjYWFmZmU0O1xufVxuLnZ1aS1leGFtcGxlIC5tYWluLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cbi52dWktZXhhbXBsZSAubWFpbi1jb250YWluZXIgLmxlZnQtc2VjdGlvbiB7XG4gIHdpZHRoOiA4MCU7XG4gIG1hcmdpbi1yaWdodDogMzBweDtcbiAgcGFkZGluZzogMCAzMHB4O1xuICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjRUJFQkVCO1xufVxuLnZ1aS1leGFtcGxlIC5tYWluLWNvbnRhaW5lciAucmlnaHQtc2VjdGlvbiB7XG4gIGJhY2tncm91bmQ6ICNmZGZmZGM7XG4gIHBhZGRpbmc6IDIwcHg7XG59XG4udnVpLWV4YW1wbGUgLmZvcm0tc3VibWl0LWRhdGEge1xuICBiYWNrZ3JvdW5kOiAjZWNmZmY5O1xuICBwYWRkaW5nOiAyMHB4O1xuICBtYXJnaW4tdG9wOiAyMHB4O1xufVxuLnZ1aS1leGFtcGxlIC5zcGVlY2gtcmVjb2duaXRpb24taW5mbyB7XG4gIHBhZGRpbmc6IDMwcHggMDtcbn1cbi52dWktZXhhbXBsZSAuc3BlZWNoLXJlY29nbml0aW9uLWluZm8gaDMge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA3NjhweCkge1xuICAudnVpLWV4YW1wbGUgLm1haW4tY29udGFpbmVyIHtcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICB9XG4gIC52dWktZXhhbXBsZSAubWFpbi1jb250YWluZXIgLmxlZnQtc2VjdGlvbiB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgbWFyZ2luOiAwIDAgMjBweCAwO1xuICAgIGJvcmRlcjogMDtcbiAgfVxufVxuOmhvc3QgOjpuZy1kZWVwIC5pY29uLnBhcnNlLWdyZWVuOjphZnRlciB7XG4gIG9wYWNpdHk6IDA7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtNXB4O1xuICBsZWZ0OiAtNXB4O1xuICByaWdodDogMDtcbiAgYm90dG9tOiAwO1xuICBjb250ZW50OiBcIlwiO1xuICBib3JkZXI6IDNweCBzb2xpZCAjMDVjNTRmO1xuICBib3JkZXItcmFkaXVzOiAxMDAlO1xuICBhbmltYXRpb24tbmFtZTogcmlwcGxlO1xuICBhbmltYXRpb24tZHVyYXRpb246IDAuNXM7XG4gIGFuaW1hdGlvbi1kZWxheTogMHM7XG4gIGFuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6IGluZmluaXRlO1xuICBhbmltYXRpb24tdGltaW5nLWZ1bmN0aW9uOiBjdWJpYy1iZXppZXIoMC42NSwgMCwgMC4zNCwgMSk7XG4gIHotaW5kZXg6IC0xO1xufVxuOmhvc3QgOjpuZy1kZWVwIC5pY29uLnBhcnNlLWdyZWVuOjpiZWZvcmUge1xuICBvcGFjaXR5OiAwO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogLTVweDtcbiAgbGVmdDogLTVweDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgY29udGVudDogXCJcIjtcbiAgYm9yZGVyOiAzcHggc29saWQgIzAwNzIyYztcbiAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgYW5pbWF0aW9uLW5hbWU6IHJpcHBsZTtcbiAgYW5pbWF0aW9uLWR1cmF0aW9uOiAxcztcbiAgYW5pbWF0aW9uLWRlbGF5OiAwLjNzO1xuICBhbmltYXRpb24taXRlcmF0aW9uLWNvdW50OiBpbmZpbml0ZTtcbiAgYW5pbWF0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuNjUsIDAsIDAuMzQsIDEpO1xuICB6LWluZGV4OiAtMTtcbn1cbjpob3N0IDo6bmctZGVlcCAuaWNvbi5saXN0ZW4tZ3JlZW46OmFmdGVyIHtcbiAgb3BhY2l0eTogMDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IC01cHg7XG4gIGxlZnQ6IC01cHg7XG4gIHJpZ2h0OiAwO1xuICBib3R0b206IDA7XG4gIGNvbnRlbnQ6IFwiXCI7XG4gIGJvcmRlcjogM3B4IHNvbGlkICMwNWM1NGY7XG4gIGJvcmRlci1yYWRpdXM6IDEwMCU7XG4gIGFuaW1hdGlvbi1uYW1lOiByaXBwbGU7XG4gIGFuaW1hdGlvbi1kdXJhdGlvbjogNXM7XG4gIGFuaW1hdGlvbi1kZWxheTogMHM7XG4gIGFuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6IGluZmluaXRlO1xuICBhbmltYXRpb24tdGltaW5nLWZ1bmN0aW9uOiBjdWJpYy1iZXppZXIoMC42NSwgMCwgMC4zNCwgMSk7XG4gIHotaW5kZXg6IC0xO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -635,7 +635,8 @@ let AppComponent = class AppComponent {
             type: 'select'
         };
         this.styleOpts = {
-           
+            iconParse: 'icon icon-mic-green',
+            animationParse: 'parse-green'
         };
     }
     ngOnInit() {
@@ -689,7 +690,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var primeng_table__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! primeng/table */ "./node_modules/primeng/fesm2015/primeng-table.js");
 /* harmony import */ var primeng_paginator__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! primeng/paginator */ "./node_modules/primeng/fesm2015/primeng-paginator.js");
 /* harmony import */ var primeng_button__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! primeng/button */ "./node_modules/primeng/fesm2015/primeng-button.js");
-/* harmony import */ var ng_voice_inputs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ng-voice-inputs */ "./node_modules/ng-voice-inputs/fesm2015/ng-voice-inputs.js");
+/* harmony import */ var _ng_voice_inputs_vui_input_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ng-voice-inputs/vui-input.directive */ "./src/app/ng-voice-inputs/vui-input.directive.ts");
+/* harmony import */ var _app_ng_voice_inputs_ng_voice_inputs_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../app/ng-voice-inputs/ng-voice-inputs.component */ "./src/app/ng-voice-inputs/ng-voice-inputs.component.ts");
+
 
 
 
@@ -712,6 +715,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+            _ng_voice_inputs_vui_input_directive__WEBPACK_IMPORTED_MODULE_15__["VuiInputDirective"],
+            _app_ng_voice_inputs_ng_voice_inputs_component__WEBPACK_IMPORTED_MODULE_16__["NgVoiceInputsComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -738,8 +743,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             primeng_paginator__WEBPACK_IMPORTED_MODULE_13__["PaginatorModule"],
             primeng_button__WEBPACK_IMPORTED_MODULE_14__["ButtonModule"],
             _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonToggleModule"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatBadgeModule"],
-            ng_voice_inputs__WEBPACK_IMPORTED_MODULE_15__["NgVoiceInputsModule"]
+            _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatBadgeModule"]
         ],
         providers: [
             { provide: _angular_material__WEBPACK_IMPORTED_MODULE_6__["DateAdapter"], useClass: _angular_material_moment_adapter__WEBPACK_IMPORTED_MODULE_4__["MomentDateAdapter"], deps: [_angular_material__WEBPACK_IMPORTED_MODULE_6__["MAT_DATE_LOCALE"]] },
@@ -762,6 +766,764 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], AppModule);
 
+
+
+/***/ }),
+
+/***/ "./src/app/ng-voice-inputs/ng-voice-inputs.component.scss":
+/*!****************************************************************!*\
+  !*** ./src/app/ng-voice-inputs/ng-voice-inputs.component.scss ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".centered {\n  margin: auto;\n  text-align: center;\n}\n\n.listening {\n  color: red;\n}\n\n.parsing {\n  color: green;\n}\n\n.icon {\n  position: relative;\n  width: 45px;\n  height: 45px;\n  display: inline-block;\n  background-size: 26px 26px;\n  background-position: 7px 7px;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.icon.parsing::after {\n  opacity: 0;\n  position: absolute;\n  top: -5px;\n  left: -5px;\n  right: 0;\n  bottom: 0;\n  content: \"\";\n  border: 3px solid #42c0fb;\n  border-radius: 100%;\n  -webkit-animation-name: ripple;\n          animation-name: ripple;\n  -webkit-animation-duration: 1s;\n          animation-duration: 1s;\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n          animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n  z-index: -1;\n}\n\n.icon.parsing::before {\n  opacity: 0;\n  position: absolute;\n  top: -5px;\n  left: -5px;\n  right: 0;\n  bottom: 0;\n  content: \"\";\n  border: 3px solid #42c0fb;\n  border-radius: 100%;\n  -webkit-animation-name: ripple;\n          animation-name: ripple;\n  -webkit-animation-duration: 1s;\n          animation-duration: 1s;\n  -webkit-animation-delay: 0.3s;\n          animation-delay: 0.3s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n          animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n  z-index: -1;\n}\n\n.icon.listening::after {\n  opacity: 0;\n  position: absolute;\n  top: -5px;\n  left: -5px;\n  right: 0;\n  bottom: 0;\n  content: \"\";\n  border: 3px solid #42c0fb44;\n  border-radius: 100%;\n  -webkit-animation-name: ripple;\n          animation-name: ripple;\n  -webkit-animation-duration: 2s;\n          animation-duration: 2s;\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n          animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);\n  z-index: -1;\n}\n\n.icon-small {\n  width: 25px;\n  height: 25px;\n  background-size: 15px 15px;\n  background-position: 5px 10px;\n}\n\n.icon-mic {\n  background-image: url(\"data:image/svg+xml;utf8,<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='853.000000pt' height='1280.000000pt' viewBox='0 0 853.000000 1280.000000' preserveAspectRatio='xMidYMid meet'> <metadata> Created by potrace 1.15, written by Peter Selinger 2001-2017 </metadata> <g transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)' fill='rgb(66,192,251)' > <path d='M4060 12789 c-194 -22 -402 -81 -577 -164 -472 -224 -789 -626 -894 -1135 l-24 -115 0 -2575 c0 -2452 1 -2579 18 -2665 145 -710 755 -1260 1492 -1345 327 -37 671 21 975 166 473 226 789 629 892 1137 l23 112 0 2575 c0 2448 -1 2579 -18 2665 -116 576 -556 1066 -1134 1264 -227 78 -508 108 -753 80z'/><path d='M301 8004 c-158 -42 -262 -156 -292 -319 -7 -38 -9 -312 -6 -839 3 -648 7 -805 21 -921 64 -538 177 -928 391 -1350 184 -361 380 -630 670 -920 529 -528 1216 -906 2020 -1110 116 -29 231 -56 258 -60 l47 -7 0 -854 0 -854 -657 0 c-717 0 -743 -2 -851 -57 -69 -35 -155 -127 -176 -189 -53 -155 36 -357 203 -463 103 -66 -69 -61 2341 -61 2377 0 2235 -3 2349 54 64 33 144 122 173 194 19 49 23 75 23 182 0 120 -1 128 -32 192 -36 76 -100 146 -165 179 -95 48 -100 49 -820 49 l-678 0 0 854 c0 805 1 855 18 860 9 2 33 7 52 11 406 77 934 271 1313 484 1088 609 1778 1567 1971 2736 48 288 51 352 51 1150 l0 760 -23 58 c-63 155 -190 243 -367 254 -147 10 -260 -32 -350 -129 -32 -34 -63 -80 -76 -115 l-24 -58 -6 -785 c-6 -737 -11 -850 -39 -1050 -100 -705 -417 -1330 -913 -1794 -538 -505 -1229 -810 -2052 -908 -146 -17 -674 -17 -820 0 -663 79 -1253 297 -1735 642 -683 489 -1111 1202 -1230 2050 -28 194 -33 327 -39 1060 l-6 785 -24 58 c-44 111 -161 208 -282 236 -62 15 -175 12 -238 -5z'/></g> </svg>\");\n}\n\n.icon-mic-blue {\n  background-image: url('mic-blue-solid.png');\n}\n\n.icon-mic-red {\n  background-image: url('mic-red-solid.png');\n}\n\n.icon-mic-green {\n  background-image: url('mic-green-solid.png');\n}\n\n@-webkit-keyframes ripple {\n  from {\n    opacity: 1;\n    transform: scale3d(0.75, 0.75, 1);\n  }\n  to {\n    opacity: 0;\n    transform: scale3d(1.5, 1.5, 1);\n  }\n}\n\n@keyframes ripple {\n  from {\n    opacity: 1;\n    transform: scale3d(0.75, 0.75, 1);\n  }\n  to {\n    opacity: 0;\n    transform: scale3d(1.5, 1.5, 1);\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmctdm9pY2UtaW5wdXRzL0M6XFxXb3Jrc3BhY2VcXFBlcnNvbmFsXFxOZ1ZvaWNlSW5wdXRzL3NyY1xcYXBwXFxuZy12b2ljZS1pbnB1dHNcXG5nLXZvaWNlLWlucHV0cy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbmctdm9pY2UtaW5wdXRzL25nLXZvaWNlLWlucHV0cy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFrQkE7RUFDSSxZQUFBO0VBQ0Esa0JBQUE7QUNqQko7O0FEb0JBO0VBQ0ksVUFBQTtBQ2pCSjs7QURvQkE7RUFDSSxZQUFBO0FDakJKOztBRG9CQTtFQUNJLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtFQUNBLDBCQUFBO0VBQ0EsNEJBQUE7RUFDQSw0QkFBQTtFQUNBLGVBQUE7QUNqQko7O0FEb0JRO0VBekNKLFVBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO1VBQUEsc0JBQUE7RUFDQSw4QkFnQ3VCO1VBaEN2QixzQkFnQ3VCO0VBL0J2QiwyQkErQjJCO1VBL0IzQixtQkErQjJCO0VBOUIzQiwyQ0FBQTtVQUFBLG1DQUFBO0VBQ0EsaUVBQUE7VUFBQSx5REFBQTtFQUNBLFdBQUE7QUN3Qko7O0FET1E7RUE3Q0osVUFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsOEJBQUE7VUFBQSxzQkFBQTtFQUNBLDhCQW9DdUI7VUFwQ3ZCLHNCQW9DdUI7RUFuQ3ZCLDZCQW1DMkI7VUFuQzNCLHFCQW1DMkI7RUFsQzNCLDJDQUFBO1VBQUEsbUNBQUE7RUFDQSxpRUFBQTtVQUFBLHlEQUFBO0VBQ0EsV0FBQTtBQ3lDSjs7QURKUTtFQW5ESixVQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsV0FBQTtFQUNBLDJCQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtVQUFBLHNCQUFBO0VBQ0EsOEJBMEN1QjtVQTFDdkIsc0JBMEN1QjtFQXpDdkIsMkJBeUMyQjtVQXpDM0IsbUJBeUMyQjtFQXhDM0IsMkNBQUE7VUFBQSxtQ0FBQTtFQUNBLGlFQUFBO1VBQUEseURBQUE7RUFDQSxXQUFBO0FDMERKOztBRGRBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSwwQkFBQTtFQUNBLDZCQUFBO0FDaUJKOztBRFhBO0VBRkkscXBEQUFBO0FDaUJKOztBRFZBO0VBQ0ksMkNBQUE7QUNhSjs7QURWQTtFQUNJLDBDQUFBO0FDYUo7O0FEVkE7RUFDSSw0Q0FBQTtBQ2FKOztBRFJBO0VBQ0U7SUFDRSxVQUFBO0lBQ0EsaUNBQUE7RUNXRjtFRFJBO0lBQ0UsVUFBQTtJQUNBLCtCQUFBO0VDVUY7QUFDRjs7QURuQkE7RUFDRTtJQUNFLFVBQUE7SUFDQSxpQ0FBQTtFQ1dGO0VEUkE7SUFDRSxVQUFBO0lBQ0EsK0JBQUE7RUNVRjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvbmctdm9pY2UtaW5wdXRzL25nLXZvaWNlLWlucHV0cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBtaXhpbiByaW5ncygkZHVyYXRpb24sICRkZWxheSwgJGNvbG9yKSB7XHJcbiAgICBvcGFjaXR5OiAwO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAtNXB4O1xyXG4gICAgbGVmdDogLTVweDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG4gICAgY29udGVudDogJyc7XHJcbiAgICBib3JkZXI6IDNweCBzb2xpZCAkY29sb3I7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMDAlO1xyXG4gICAgYW5pbWF0aW9uLW5hbWU6IHJpcHBsZTtcclxuICAgIGFuaW1hdGlvbi1kdXJhdGlvbjogJGR1cmF0aW9uO1xyXG4gICAgYW5pbWF0aW9uLWRlbGF5OiAkZGVsYXk7XHJcbiAgICBhbmltYXRpb24taXRlcmF0aW9uLWNvdW50OiBpbmZpbml0ZTtcclxuICAgIGFuaW1hdGlvbi10aW1pbmctZnVuY3Rpb246IGN1YmljLWJlemllciguNjUsMCwuMzQsMSk7XHJcbiAgICB6LWluZGV4OiAtMTtcclxufVxyXG5cclxuLmNlbnRlcmVkIHtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLmxpc3RlbmluZyB7XHJcbiAgICBjb2xvcjogcmVkO1xyXG59XHJcblxyXG4ucGFyc2luZyB7XHJcbiAgICBjb2xvcjogZ3JlZW47XHJcbn1cclxuXHJcbi5pY29uIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHdpZHRoOiA0NXB4O1xyXG4gICAgaGVpZ2h0OiA0NXB4O1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiAyNnB4IDI2cHg7XHJcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiA3cHggN3B4O1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuXHJcbiAgICAmLnBhcnNpbmcge1xyXG4gICAgICAgICY6OmFmdGVyIHtcclxuICAgICAgICAgICAgQGluY2x1ZGUgcmluZ3MoMXMsIDBzLCAjNDJjMGZiKTtcclxuICAgICAgICB9XHJcbiAgICAgICAgXHJcbiAgICAgICAgJjo6YmVmb3JlIHtcclxuICAgICAgICAgICAgQGluY2x1ZGUgcmluZ3MoMXMsIDAuM3MsICM0MmMwZmIpO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAmLmxpc3RlbmluZyB7XHJcbiAgICAgICAgJjo6YWZ0ZXIge1xyXG4gICAgICAgICAgICBAaW5jbHVkZSByaW5ncygycywgMHMsICM0MmMwZmI0NCk7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxufVxyXG5cclxuLmljb24tc21hbGwge1xyXG4gICAgd2lkdGg6IDI1cHg7XHJcbiAgICBoZWlnaHQ6IDI1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6IDE1cHggMTVweDtcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IDVweCAxMHB4O1xyXG59XHJcblxyXG5AbWl4aW4gaWNvbi1taWMoJGNvbG9yKSB7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWw7dXRmOCw8c3ZnIHZlcnNpb249JzEuMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB3aWR0aD0nODUzLjAwMDAwMHB0JyBoZWlnaHQ9JzEyODAuMDAwMDAwcHQnIHZpZXdCb3g9JzAgMCA4NTMuMDAwMDAwIDEyODAuMDAwMDAwJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSd4TWlkWU1pZCBtZWV0Jz4gPG1ldGFkYXRhPiBDcmVhdGVkIGJ5IHBvdHJhY2UgMS4xNSwgd3JpdHRlbiBieSBQZXRlciBTZWxpbmdlciAyMDAxLTIwMTcgPC9tZXRhZGF0YT4gPGcgdHJhbnNmb3JtPSd0cmFuc2xhdGUoMC4wMDAwMDAsMTI4MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCknIGZpbGw9J1wiICsgJGNvbG9yICsgXCInID4gPHBhdGggZD0nTTQwNjAgMTI3ODkgYy0xOTQgLTIyIC00MDIgLTgxIC01NzcgLTE2NCAtNDcyIC0yMjQgLTc4OSAtNjI2IC04OTQgLTExMzUgbC0yNCAtMTE1IDAgLTI1NzUgYzAgLTI0NTIgMSAtMjU3OSAxOCAtMjY2NSAxNDUgLTcxMCA3NTUgLTEyNjAgMTQ5MiAtMTM0NSAzMjcgLTM3IDY3MSAyMSA5NzUgMTY2IDQ3MyAyMjYgNzg5IDYyOSA4OTIgMTEzNyBsMjMgMTEyIDAgMjU3NSBjMCAyNDQ4IC0xIDI1NzkgLTE4IDI2NjUgLTExNiA1NzYgLTU1NiAxMDY2IC0xMTM0IDEyNjQgLTIyNyA3OCAtNTA4IDEwOCAtNzUzIDgweicvPjxwYXRoIGQ9J00zMDEgODAwNCBjLTE1OCAtNDIgLTI2MiAtMTU2IC0yOTIgLTMxOSAtNyAtMzggLTkgLTMxMiAtNiAtODM5IDMgLTY0OCA3IC04MDUgMjEgLTkyMSA2NCAtNTM4IDE3NyAtOTI4IDM5MSAtMTM1MCAxODQgLTM2MSAzODAgLTYzMCA2NzAgLTkyMCA1MjkgLTUyOCAxMjE2IC05MDYgMjAyMCAtMTExMCAxMTYgLTI5IDIzMSAtNTYgMjU4IC02MCBsNDcgLTcgMCAtODU0IDAgLTg1NCAtNjU3IDAgYy03MTcgMCAtNzQzIC0yIC04NTEgLTU3IC02OSAtMzUgLTE1NSAtMTI3IC0xNzYgLTE4OSAtNTMgLTE1NSAzNiAtMzU3IDIwMyAtNDYzIDEwMyAtNjYgLTY5IC02MSAyMzQxIC02MSAyMzc3IDAgMjIzNSAtMyAyMzQ5IDU0IDY0IDMzIDE0NCAxMjIgMTczIDE5NCAxOSA0OSAyMyA3NSAyMyAxODIgMCAxMjAgLTEgMTI4IC0zMiAxOTIgLTM2IDc2IC0xMDAgMTQ2IC0xNjUgMTc5IC05NSA0OCAtMTAwIDQ5IC04MjAgNDkgbC02NzggMCAwIDg1NCBjMCA4MDUgMSA4NTUgMTggODYwIDkgMiAzMyA3IDUyIDExIDQwNiA3NyA5MzQgMjcxIDEzMTMgNDg0IDEwODggNjA5IDE3NzggMTU2NyAxOTcxIDI3MzYgNDggMjg4IDUxIDM1MiA1MSAxMTUwIGwwIDc2MCAtMjMgNTggYy02MyAxNTUgLTE5MCAyNDMgLTM2NyAyNTQgLTE0NyAxMCAtMjYwIC0zMiAtMzUwIC0xMjkgLTMyIC0zNCAtNjMgLTgwIC03NiAtMTE1IGwtMjQgLTU4IC02IC03ODUgYy02IC03MzcgLTExIC04NTAgLTM5IC0xMDUwIC0xMDAgLTcwNSAtNDE3IC0xMzMwIC05MTMgLTE3OTQgLTUzOCAtNTA1IC0xMjI5IC04MTAgLTIwNTIgLTkwOCAtMTQ2IC0xNyAtNjc0IC0xNyAtODIwIDAgLTY2MyA3OSAtMTI1MyAyOTcgLTE3MzUgNjQyIC02ODMgNDg5IC0xMTExIDEyMDIgLTEyMzAgMjA1MCAtMjggMTk0IC0zMyAzMjcgLTM5IDEwNjAgbC02IDc4NSAtMjQgNTggYy00NCAxMTEgLTE2MSAyMDggLTI4MiAyMzYgLTYyIDE1IC0xNzUgMTIgLTIzOCAtNXonLz48L2c+IDwvc3ZnPlwiKTtcclxufVxyXG4uaWNvbi1taWMge1xyXG4gICAgQGluY2x1ZGUgaWNvbi1taWMoJ3JnYig2NiwxOTIsMjUxKScpO1xyXG59XHJcblxyXG5cclxuLmljb24tbWljLWJsdWUge1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcuLi8uLi9hc3NldHMvaWNvbnMvbWljLWJsdWUtc29saWQucG5nJyk7XHJcbn1cclxuXHJcbi5pY29uLW1pYy1yZWQge1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcuLi8uLi9hc3NldHMvaWNvbnMvbWljLXJlZC1zb2xpZC5wbmcnKTtcclxufVxyXG5cclxuLmljb24tbWljLWdyZWVuIHsgXHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uLy4uL2Fzc2V0cy9pY29ucy9taWMtZ3JlZW4tc29saWQucG5nJyk7XHJcbn1cclxuXHJcblxyXG5cclxuQGtleWZyYW1lcyByaXBwbGUge1xyXG4gIGZyb20ge1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIHRyYW5zZm9ybTogc2NhbGUzZCgwLjc1LDAuNzUsMSk7XHJcbiAgfVxyXG4gIFxyXG4gIHRvIHtcclxuICAgIG9wYWNpdHk6IDA7XHJcbiAgICB0cmFuc2Zvcm06IHNjYWxlM2QoMS41LDEuNSwxKTtcclxuICB9XHJcbn0iLCIuY2VudGVyZWQge1xuICBtYXJnaW46IGF1dG87XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmxpc3RlbmluZyB7XG4gIGNvbG9yOiByZWQ7XG59XG5cbi5wYXJzaW5nIHtcbiAgY29sb3I6IGdyZWVuO1xufVxuXG4uaWNvbiB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDQ1cHg7XG4gIGhlaWdodDogNDVweDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBiYWNrZ3JvdW5kLXNpemU6IDI2cHggMjZweDtcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogN3B4IDdweDtcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuLmljb24ucGFyc2luZzo6YWZ0ZXIge1xuICBvcGFjaXR5OiAwO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogLTVweDtcbiAgbGVmdDogLTVweDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgY29udGVudDogXCJcIjtcbiAgYm9yZGVyOiAzcHggc29saWQgIzQyYzBmYjtcbiAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgYW5pbWF0aW9uLW5hbWU6IHJpcHBsZTtcbiAgYW5pbWF0aW9uLWR1cmF0aW9uOiAxcztcbiAgYW5pbWF0aW9uLWRlbGF5OiAwcztcbiAgYW5pbWF0aW9uLWl0ZXJhdGlvbi1jb3VudDogaW5maW5pdGU7XG4gIGFuaW1hdGlvbi10aW1pbmctZnVuY3Rpb246IGN1YmljLWJlemllcigwLjY1LCAwLCAwLjM0LCAxKTtcbiAgei1pbmRleDogLTE7XG59XG4uaWNvbi5wYXJzaW5nOjpiZWZvcmUge1xuICBvcGFjaXR5OiAwO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogLTVweDtcbiAgbGVmdDogLTVweDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgY29udGVudDogXCJcIjtcbiAgYm9yZGVyOiAzcHggc29saWQgIzQyYzBmYjtcbiAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgYW5pbWF0aW9uLW5hbWU6IHJpcHBsZTtcbiAgYW5pbWF0aW9uLWR1cmF0aW9uOiAxcztcbiAgYW5pbWF0aW9uLWRlbGF5OiAwLjNzO1xuICBhbmltYXRpb24taXRlcmF0aW9uLWNvdW50OiBpbmZpbml0ZTtcbiAgYW5pbWF0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuNjUsIDAsIDAuMzQsIDEpO1xuICB6LWluZGV4OiAtMTtcbn1cbi5pY29uLmxpc3RlbmluZzo6YWZ0ZXIge1xuICBvcGFjaXR5OiAwO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogLTVweDtcbiAgbGVmdDogLTVweDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgY29udGVudDogXCJcIjtcbiAgYm9yZGVyOiAzcHggc29saWQgIzQyYzBmYjQ0O1xuICBib3JkZXItcmFkaXVzOiAxMDAlO1xuICBhbmltYXRpb24tbmFtZTogcmlwcGxlO1xuICBhbmltYXRpb24tZHVyYXRpb246IDJzO1xuICBhbmltYXRpb24tZGVsYXk6IDBzO1xuICBhbmltYXRpb24taXRlcmF0aW9uLWNvdW50OiBpbmZpbml0ZTtcbiAgYW5pbWF0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuNjUsIDAsIDAuMzQsIDEpO1xuICB6LWluZGV4OiAtMTtcbn1cblxuLmljb24tc21hbGwge1xuICB3aWR0aDogMjVweDtcbiAgaGVpZ2h0OiAyNXB4O1xuICBiYWNrZ3JvdW5kLXNpemU6IDE1cHggMTVweDtcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogNXB4IDEwcHg7XG59XG5cbi5pY29uLW1pYyB7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImRhdGE6aW1hZ2Uvc3ZnK3htbDt1dGY4LDxzdmcgdmVyc2lvbj0nMS4wJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4NTMuMDAwMDAwcHQnIGhlaWdodD0nMTI4MC4wMDAwMDBwdCcgdmlld0JveD0nMCAwIDg1My4wMDAwMDAgMTI4MC4wMDAwMDAnIHByZXNlcnZlQXNwZWN0UmF0aW89J3hNaWRZTWlkIG1lZXQnPiA8bWV0YWRhdGE+IENyZWF0ZWQgYnkgcG90cmFjZSAxLjE1LCB3cml0dGVuIGJ5IFBldGVyIFNlbGluZ2VyIDIwMDEtMjAxNyA8L21ldGFkYXRhPiA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgwLjAwMDAwMCwxMjgwLjAwMDAwMCkgc2NhbGUoMC4xMDAwMDAsLTAuMTAwMDAwKScgZmlsbD0ncmdiKDY2LDE5MiwyNTEpJyA+IDxwYXRoIGQ9J000MDYwIDEyNzg5IGMtMTk0IC0yMiAtNDAyIC04MSAtNTc3IC0xNjQgLTQ3MiAtMjI0IC03ODkgLTYyNiAtODk0IC0xMTM1IGwtMjQgLTExNSAwIC0yNTc1IGMwIC0yNDUyIDEgLTI1NzkgMTggLTI2NjUgMTQ1IC03MTAgNzU1IC0xMjYwIDE0OTIgLTEzNDUgMzI3IC0zNyA2NzEgMjEgOTc1IDE2NiA0NzMgMjI2IDc4OSA2MjkgODkyIDExMzcgbDIzIDExMiAwIDI1NzUgYzAgMjQ0OCAtMSAyNTc5IC0xOCAyNjY1IC0xMTYgNTc2IC01NTYgMTA2NiAtMTEzNCAxMjY0IC0yMjcgNzggLTUwOCAxMDggLTc1MyA4MHonLz48cGF0aCBkPSdNMzAxIDgwMDQgYy0xNTggLTQyIC0yNjIgLTE1NiAtMjkyIC0zMTkgLTcgLTM4IC05IC0zMTIgLTYgLTgzOSAzIC02NDggNyAtODA1IDIxIC05MjEgNjQgLTUzOCAxNzcgLTkyOCAzOTEgLTEzNTAgMTg0IC0zNjEgMzgwIC02MzAgNjcwIC05MjAgNTI5IC01MjggMTIxNiAtOTA2IDIwMjAgLTExMTAgMTE2IC0yOSAyMzEgLTU2IDI1OCAtNjAgbDQ3IC03IDAgLTg1NCAwIC04NTQgLTY1NyAwIGMtNzE3IDAgLTc0MyAtMiAtODUxIC01NyAtNjkgLTM1IC0xNTUgLTEyNyAtMTc2IC0xODkgLTUzIC0xNTUgMzYgLTM1NyAyMDMgLTQ2MyAxMDMgLTY2IC02OSAtNjEgMjM0MSAtNjEgMjM3NyAwIDIyMzUgLTMgMjM0OSA1NCA2NCAzMyAxNDQgMTIyIDE3MyAxOTQgMTkgNDkgMjMgNzUgMjMgMTgyIDAgMTIwIC0xIDEyOCAtMzIgMTkyIC0zNiA3NiAtMTAwIDE0NiAtMTY1IDE3OSAtOTUgNDggLTEwMCA0OSAtODIwIDQ5IGwtNjc4IDAgMCA4NTQgYzAgODA1IDEgODU1IDE4IDg2MCA5IDIgMzMgNyA1MiAxMSA0MDYgNzcgOTM0IDI3MSAxMzEzIDQ4NCAxMDg4IDYwOSAxNzc4IDE1NjcgMTk3MSAyNzM2IDQ4IDI4OCA1MSAzNTIgNTEgMTE1MCBsMCA3NjAgLTIzIDU4IGMtNjMgMTU1IC0xOTAgMjQzIC0zNjcgMjU0IC0xNDcgMTAgLTI2MCAtMzIgLTM1MCAtMTI5IC0zMiAtMzQgLTYzIC04MCAtNzYgLTExNSBsLTI0IC01OCAtNiAtNzg1IGMtNiAtNzM3IC0xMSAtODUwIC0zOSAtMTA1MCAtMTAwIC03MDUgLTQxNyAtMTMzMCAtOTEzIC0xNzk0IC01MzggLTUwNSAtMTIyOSAtODEwIC0yMDUyIC05MDggLTE0NiAtMTcgLTY3NCAtMTcgLTgyMCAwIC02NjMgNzkgLTEyNTMgMjk3IC0xNzM1IDY0MiAtNjgzIDQ4OSAtMTExMSAxMjAyIC0xMjMwIDIwNTAgLTI4IDE5NCAtMzMgMzI3IC0zOSAxMDYwIGwtNiA3ODUgLTI0IDU4IGMtNDQgMTExIC0xNjEgMjA4IC0yODIgMjM2IC02MiAxNSAtMTc1IDEyIC0yMzggLTV6Jy8+PC9nPiA8L3N2Zz5cIik7XG59XG5cbi5pY29uLW1pYy1ibHVlIHtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi4vLi4vYXNzZXRzL2ljb25zL21pYy1ibHVlLXNvbGlkLnBuZ1wiKTtcbn1cblxuLmljb24tbWljLXJlZCB7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybChcIi4uLy4uL2Fzc2V0cy9pY29ucy9taWMtcmVkLXNvbGlkLnBuZ1wiKTtcbn1cblxuLmljb24tbWljLWdyZWVuIHtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi4vLi4vYXNzZXRzL2ljb25zL21pYy1ncmVlbi1zb2xpZC5wbmdcIik7XG59XG5cbkBrZXlmcmFtZXMgcmlwcGxlIHtcbiAgZnJvbSB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2Zvcm06IHNjYWxlM2QoMC43NSwgMC43NSwgMSk7XG4gIH1cbiAgdG8ge1xuICAgIG9wYWNpdHk6IDA7XG4gICAgdHJhbnNmb3JtOiBzY2FsZTNkKDEuNSwgMS41LCAxKTtcbiAgfVxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/ng-voice-inputs/ng-voice-inputs.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/ng-voice-inputs/ng-voice-inputs.component.ts ***!
+  \**************************************************************/
+/*! exports provided: NgVoiceInputsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NgVoiceInputsComponent", function() { return NgVoiceInputsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ng_voice_inputs_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ng-voice-inputs.service */ "./src/app/ng-voice-inputs/ng-voice-inputs.service.ts");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment/moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _vui_response__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./vui-response */ "./src/app/ng-voice-inputs/vui-response.ts");
+
+
+
+
+const moment = moment_moment__WEBPACK_IMPORTED_MODULE_3__;
+
+const DEFAULT_STYLE = {
+    containerClass: 'centered',
+    iconStart: 'icon icon-mic',
+    iconParse: 'icon icon-mic',
+    iconStop: 'icon icon-mic',
+    animationParse: 'parsing',
+    animationListen: 'listening'
+};
+const DEFAULT_SCROLL_OFFSET = 200;
+const DEFAULT_SCROLL_DURATION = 300;
+const DEFAULT_SCROLL_DIRECTION = 'vertical';
+let NgVoiceInputsComponent = class NgVoiceInputsComponent {
+    constructor(vuiService, ref) {
+        this.vuiService = vuiService;
+        this.ref = ref;
+        this.onValueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        /**
+         * Decides direction of scroll movement ( Up or Down ) or ( Left or Right)
+         * +ve value indicates Down/Right and -ve value idicates Up/Left
+         */
+        this.activeDirection = +1;
+        /**
+         * Decides direction of Scroll ( Vertical or Horizontal )
+         */
+        this.scrollDirection = DEFAULT_SCROLL_DIRECTION;
+        this.scrollToTop = (duration) => {
+            let interval = setInterval(() => {
+                var pos = Math.abs(Math.round((window.pageYOffset / (duration / 100))));
+                if (pos > 0) {
+                    window.scrollTo(0, pos - 20); // how far to scroll on each step
+                }
+                else {
+                    clearInterval(interval);
+                }
+            }, 100);
+        };
+        this.scrollBy = (offset, duration, direction) => {
+            this.activeDirection = (offset / offset);
+            this.scrollDirection = direction || DEFAULT_SCROLL_DIRECTION;
+            if (offset == 1) {
+                offset = window.outerHeight;
+            }
+            let val = Math.abs(Math.round((offset / (duration / 100))));
+            let totalOffset = 0;
+            let interval = setInterval(() => {
+                if (totalOffset >= Math.abs(offset)) {
+                    clearInterval(interval);
+                }
+                else {
+                    let opt = {
+                        top: offset < 0 ? -1 * val : val,
+                        left: 0
+                    };
+                    if (direction == 'horizontal') {
+                        opt = {
+                            top: 0,
+                            left: offset < 0 ? -1 * val : val
+                        };
+                    }
+                    window.scrollBy(Object.assign({}, opt, { behavior: 'smooth' }));
+                    totalOffset = totalOffset + val;
+                }
+            }, 100);
+        };
+        this.scroll = {
+            SCROLLDOWN: () => {
+                this.scrollBy(this.scrollOffset, this.scrollDuration);
+            },
+            SCROLLUP: () => {
+                this.scrollBy(-1 * this.scrollOffset, this.scrollDuration);
+            },
+            SCROLLRIGHT: () => {
+                this.scrollBy(this.scrollOffset, this.scrollDuration, 'horizontal');
+            },
+            SCROLLLEFT: () => {
+                this.scrollBy(-1 * this.scrollOffset, this.scrollDuration, 'horizontal');
+            },
+            SCROLLBOTTOM: () => {
+                this.scrollBy(1, this.scrollDuration);
+            },
+            SCROLLTOP: () => {
+                this.scrollToTop(this.scrollDuration);
+            },
+            SCROLLCONTINUE: () => {
+                const factor = Math.ceil(window.outerHeight / this.scrollDuration);
+                console.log(factor * this.scrollDuration, factor);
+                this.scrollBy(window.outerHeight, factor * 1000);
+            }
+        };
+    }
+    ngOnInit() {
+        this.style = Object.assign({}, DEFAULT_STYLE, this.style);
+        this.scrollOffset = this.scrollOffset || DEFAULT_SCROLL_OFFSET;
+        this.scrollDuration = this.scrollDuration || DEFAULT_SCROLL_DURATION;
+        try {
+            this.initVoiceRecognition();
+        }
+        catch (e) {
+            console.error('Failed to initialize or parse');
+            this.stopRecognition();
+        }
+        this.vuiService.response.subscribe(this.vuiResponseSubscription.bind(this));
+    }
+    vuiResponseSubscription(data) {
+        this.transcript = '';
+        let currentRef = this.vuiService.currentRef;
+        if (data.type == 'COMMAND_NEXT') {
+            currentRef = ++this.vuiService.currentRef;
+        }
+        else if (data.type == 'COMMAND_PREVIOUS') {
+            currentRef = --this.vuiService.currentRef;
+        }
+        else if (data.type == 'COMMAND_FIRST') {
+            currentRef = 0;
+        }
+        else if (data.type == 'COMMAND_LAST') {
+            currentRef = this.vuiService.inputRefs.length - 1;
+        }
+        else if (data.type == 'COMMAND_CLEAR') {
+            this.vuiService.inputRefs[currentRef].nativeElement.value = '';
+        }
+        else if (data.type == 'COMMAND_CLICK') {
+            this.vuiService.inputRefs[currentRef].nativeElement.click();
+        }
+        else if (data.type.includes('COMMAND_SCROLL')) {
+            this.scroll[data.type.replace('COMMAND_', '')].call();
+        }
+        else if (data.type == 'COMMAND_STOP') {
+            this.stopRecognition();
+        }
+        else {
+            const currentInputObj = this.vuiService.inputRefs[currentRef];
+            const currentEl = currentInputObj.nativeElement;
+            const opts = currentInputObj['options'];
+            if (data.value && data.value[0] instanceof Date) {
+                if (currentEl.type == 'date' || currentEl.type == 'datetime') {
+                    currentEl.value = this.formatDate(data.value[0], 'YYYY-MM-DD');
+                }
+                else {
+                    currentEl.value = this.formatDate(data.value[0], opts && opts.format);
+                }
+            }
+            else {
+                currentEl.value = data.value;
+            }
+            currentEl.dispatchEvent(new Event('input'));
+            this.onValueChange.emit(data);
+        }
+        this.vuiService.inputRefs[currentRef].nativeElement.focus();
+        this.setProcess('listening');
+    }
+    setProcess(processType) {
+        this.process = processType;
+        this.ref.detectChanges();
+    }
+    formatDate(date, format) {
+        return moment(date).format(format || 'DD/MM/YYYY');
+    }
+    initVoiceRecognition() {
+        this.recognition = new window['webkitSpeechRecognition']();
+        this.recognition.continuous = true;
+        this.recognition.interimResults = true;
+        this.recognition.onstart = (event) => {
+            this.setProcess('listening');
+        };
+        this.recognition.onresult = (event) => {
+            const currentInputObj = this.vuiService.inputRefs[this.vuiService.currentRef];
+            const opts = currentInputObj['options'];
+            this.setProcess('parsing');
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    this.transcript += event.results[i][0].transcript;
+                    let data = this.vuiService.interpretSpeech(this.transcript, opts && opts.type);
+                    let resp = new _vui_response__WEBPACK_IMPORTED_MODULE_4__["default"]('invalid', data);
+                    if (data) {
+                        resp = new _vui_response__WEBPACK_IMPORTED_MODULE_4__["default"]('date-range', data);
+                        if (typeof data == 'string') {
+                            resp = new _vui_response__WEBPACK_IMPORTED_MODULE_4__["default"](data, data.includes('_') ? '' : data);
+                        }
+                    }
+                    this.vuiService.response.next(resp);
+                }
+            }
+        };
+        this.recognition.onerror = () => {
+            this.setProcess(null);
+        };
+        this.recognition.onend = () => {
+            this.setProcess(null);
+        };
+    }
+    startRecognition() {
+        this.transcript = '';
+        this.recognition.start();
+    }
+    stopRecognition() {
+        this.transcript = '';
+        this.recognition.stop();
+        this.setProcess(null);
+    }
+};
+NgVoiceInputsComponent.ctorParameters = () => [
+    { type: _ng_voice_inputs_service__WEBPACK_IMPORTED_MODULE_2__["VuiVoiceRecognitionService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], NgVoiceInputsComponent.prototype, "style", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], NgVoiceInputsComponent.prototype, "scrollOffset", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], NgVoiceInputsComponent.prototype, "scrollDuration", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+], NgVoiceInputsComponent.prototype, "onValueChange", void 0);
+NgVoiceInputsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'ng-voice-input',
+        template: `
+              <div [class]="style.containerClass">
+                <i [class]="style.iconStart" mat-raised-button (click)="startRecognition()" *ngIf="!process"></i>
+                <i [ngClass]="process == 'parsing' ? style.iconParse + ' ' + style.animationParse : style.iconStop + ' ' + style.animationListen" (click)="stopRecognition()" *ngIf="process"></i>
+              </div>
+            `,
+        encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./ng-voice-inputs.component.scss */ "./src/app/ng-voice-inputs/ng-voice-inputs.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ng_voice_inputs_service__WEBPACK_IMPORTED_MODULE_2__["VuiVoiceRecognitionService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
+], NgVoiceInputsComponent);
+
+Date.prototype['isValid'] = function () {
+    // If the date object is invalid it 
+    // will return 'NaN' on getTime()   
+    // and NaN is never equal to itself.   
+    return this.getTime() === this.getTime();
+};
+
+
+/***/ }),
+
+/***/ "./src/app/ng-voice-inputs/ng-voice-inputs.service.ts":
+/*!************************************************************!*\
+  !*** ./src/app/ng-voice-inputs/ng-voice-inputs.service.ts ***!
+  \************************************************************/
+/*! exports provided: VuiVoiceRecognitionService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VuiVoiceRecognitionService", function() { return VuiVoiceRecognitionService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment/moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+const moment = moment_moment__WEBPACK_IMPORTED_MODULE_2__;
+
+const UNIT = {
+    zero: 0,
+    first: 1,
+    one: 1,
+    second: 2,
+    two: 2,
+    third: 3,
+    thirteenth: 13,
+    thirteen: 13,
+    three: 3,
+    fourth: 4,
+    fourteenth: 14,
+    fourteen: 14,
+    four: 4,
+    fifteenth: 15,
+    fifteen: 15,
+    fifth: 5,
+    five: 5,
+    sixth: 6,
+    sixteenth: 16,
+    sixteen: 16,
+    six: 6,
+    seventeenth: 17,
+    seventeen: 17,
+    seventh: 7,
+    seven: 7,
+    eighteenth: 18,
+    eighteen: 18,
+    eighth: 8,
+    eight: 8,
+    nineteenth: 19,
+    nineteen: 19,
+    ninth: 9,
+    nine: 9,
+    tenth: 10,
+    ten: 10,
+    eleventh: 11,
+    eleven: 11,
+    twelfth: 12,
+    twelve: 12,
+    a: 1,
+};
+const TWOS = {
+    ten: 10,
+    eleven: 11,
+    twelve: 12,
+    thirteen: 13,
+    fourteen: 14,
+    fifteen: 15,
+    sixteen: 16,
+    seventeen: 17,
+    eighteen: 18,
+    nineteen: 19
+};
+const TEN = {
+    twenty: 20,
+    twentieth: 20,
+    thirty: 30,
+    thirtieth: 30,
+    forty: 40,
+    fortieth: 40,
+    fifty: 50,
+    fiftieth: 50,
+    sixty: 60,
+    sixtieth: 60,
+    seventy: 70,
+    seventieth: 70,
+    eighty: 80,
+    eightieth: 80,
+    ninety: 90,
+    ninetieth: 90,
+};
+const MAGNITUDE = {
+    hundred: 100,
+    hundredth: 100,
+    thousand: 1000,
+    million: 1000000,
+    billion: 1000000000,
+    trillion: 1000000000000,
+    quadrillion: 1000000000000000,
+    quintillion: 1000000000000000000,
+    sextillion: 1000000000000000000000,
+    septillion: 1000000000000000000000000,
+    octillion: 1000000000000000000000000000,
+    nonillion: 1000000000000000000000000000000,
+    decillion: 1000000000000000000000000000000000,
+};
+const NUMBER = Object.assign({}, UNIT, TEN, MAGNITUDE);
+const SUFFIXES = ['st', 'nd', 'rd', 'th'];
+const MONTHS = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
+const KEY_WORDS_FWD_NAV = ['forward', 'next'];
+const KEY_WORDS_BCK_NAV = ['back', 'backward', 'previous'];
+const KEY_WORDS_CLEAR = ['clear', 'clean', 'delete', 'remove'];
+const KEY_WORDS_CLICK = ['click', 'submit', 'expand', 'open', 'show'];
+const KEY_WORDS_STOP = ['stop', 'end', 'done'];
+const KEY_WORDS_SCROLL_UP = ['scroll up', 'go up', 'up'];
+const KEY_WORDS_SCROLL_DOWN = ['scroll down', 'go down', 'down'];
+const KEY_WORDS_SCROLL_RIGHT = ['scroll right', 'go right', 'right'];
+const KEY_WORDS_SCROLL_LEFT = ['scroll left', 'go left', 'left'];
+const KEY_WORDS_SCROLL_TOP = ['scroll top', 'go top', 'top'];
+const KEY_WORDS_SCROLL_BOTTOM = ['scroll bottom', 'go bottom', 'bottom'];
+const KEY_WORDS_SCROLL_CONTINUE = ['keep scrolling', 'scroll', 'scrolling', 'continue scrolling'];
+const KEY_WORDS_SCROLL = [
+    ...KEY_WORDS_SCROLL_UP,
+    ...KEY_WORDS_SCROLL_DOWN,
+    ...KEY_WORDS_SCROLL_RIGHT,
+    ...KEY_WORDS_SCROLL_LEFT,
+    ...KEY_WORDS_SCROLL_TOP,
+    ...KEY_WORDS_SCROLL_BOTTOM,
+    ...KEY_WORDS_SCROLL_CONTINUE
+];
+const KEY_WORDS_INST = ['goto', 'switch', 'go', ...KEY_WORDS_CLEAR, ...KEY_WORDS_CLICK, ...KEY_WORDS_SCROLL]; // Instruction types
+const KEY_WORDS_NAV = [
+    ...KEY_WORDS_FWD_NAV,
+    ...KEY_WORDS_BCK_NAV,
+    ...KEY_WORDS_STOP,
+    ...KEY_WORDS_SCROLL,
+    'first', 'last',
+]; // Navigation types
+const KEY_WORDS = [...KEY_WORDS_INST, ...KEY_WORDS_NAV];
+const INST_MAPPINGS = {
+    next: KEY_WORDS_FWD_NAV,
+    previous: KEY_WORDS_BCK_NAV,
+    first: ['first'],
+    last: ['last'],
+    clear: KEY_WORDS_CLEAR,
+    click: KEY_WORDS_CLICK,
+    stop: KEY_WORDS_STOP,
+    scrollUp: KEY_WORDS_SCROLL_UP,
+    scrollDown: KEY_WORDS_SCROLL_DOWN,
+    scrollLeft: KEY_WORDS_SCROLL_LEFT,
+    scrollRight: KEY_WORDS_SCROLL_RIGHT,
+    scrollTop: KEY_WORDS_SCROLL_TOP,
+    scrollBottom: KEY_WORDS_SCROLL_BOTTOM,
+    scrollContinue: KEY_WORDS_SCROLL_CONTINUE
+};
+let VuiVoiceRecognitionService = class VuiVoiceRecognitionService {
+    constructor() {
+        this.response = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        this.inputRefs = [];
+        this.currentRef = 0;
+    }
+    isInputSwitch(speechKeys, inputType) {
+        if (inputType == 'address' && !speechKeys.some(key => KEY_WORDS_INST.includes(key))) {
+            return false;
+        }
+        if (speechKeys.some(key => KEY_WORDS.includes(key))) {
+            return true;
+        }
+        return false;
+    }
+    findInstructionType(speechText, inputType) {
+        let type = '';
+        speechText = speechText.trim().toLocaleLowerCase();
+        let speechKeys = speechText.trim().toLocaleLowerCase().split(' ');
+        if (this.isInputSwitch(speechKeys, inputType)) {
+            const foundKey = Object.keys(INST_MAPPINGS).find((instType) => speechKeys.some(key => INST_MAPPINGS[instType].includes(key)));
+            type = foundKey ? `COMMAND_${foundKey.toUpperCase()}` : '';
+        }
+        else {
+            type = 'INPUT';
+        }
+        return type;
+    }
+    interpretSpeech(speechText, inputType) {
+        let instType = this.findInstructionType(speechText, inputType);
+        if (instType != 'INPUT') {
+            return instType;
+        }
+        if (inputType == 'text' || inputType == 'address') {
+            return speechText;
+        }
+        if (inputType == 'number') {
+            return this.wordsToNumber(speechText);
+        }
+        if (inputType == 'date') {
+            speechText = speechText.replace('from', '');
+            let dates = speechText.trim().split('to ');
+            let parsedDates = [];
+            dates.forEach((dateStr) => {
+                parsedDates.push(this.dateParser(dateStr));
+            });
+            if (parsedDates[0].isValid()) {
+                return parsedDates;
+            }
+        }
+        return null;
+    }
+    dateParser(dateStr) {
+        let parsedDate;
+        let cleanDateStr = dateStr;
+        let dateParts = dateStr.trim().split(' ');
+        let datePartObj = {};
+        let isPureNumber = false;
+        let cleanDateParts = [];
+        if (dateParts.length == 3) {
+            cleanDateParts = dateParts.map((dateStr) => this.eliminateString(dateStr));
+            isPureNumber = cleanDateParts.every((dateStr) => Number.isInteger(dateStr));
+        }
+        if (isPureNumber) {
+            cleanDateStr = cleanDateParts.join('-');
+        }
+        else {
+            const currentDate = moment();
+            dateParts.forEach((dateStr) => {
+                datePartObj = this.parseDatePart(dateStr, datePartObj);
+            });
+            const availableKeys = Object.keys(datePartObj).join('-');
+            switch (availableKeys) {
+                case 'date':
+                    datePartObj.month = currentDate.format('MM');
+                case 'date-month':
+                    datePartObj.year = currentDate.format('YYYY');
+                    break;
+                case 'year':
+                    datePartObj.month = '01';
+                case 'month-year':
+                    datePartObj.date = '01';
+                    break;
+                case 'month':
+                    datePartObj.year = currentDate.format('YYYY');
+                    datePartObj.date = '01';
+            }
+            cleanDateStr = this.dateBuilder(datePartObj);
+        }
+        parsedDate = moment(cleanDateStr).toDate();
+        return parsedDate;
+    }
+    dateBuilder(datePartObj) {
+        let dateStr = '';
+        dateStr = `${datePartObj.year}-${datePartObj.month}-${datePartObj.date}`;
+        return dateStr;
+    }
+    /**
+     *
+     * @param datePart Incomplete date part eg, '21st' is the date part for the date '21st July 2020'
+     * @param datePartObj // Inherited from caller & updated with parsed object. Can be year, month or date
+     */
+    parseDatePart(datePart, datePartObj) {
+        if (this.isYearType(datePart)) {
+            const year = this.wordsToNumber(datePart);
+            datePartObj.year = year;
+        }
+        else if (this.isDateType(datePart)) {
+            const date = this.wordsToNumber(datePart);
+            datePartObj.date = date;
+        }
+        else if (this.isMonthType(datePart)) {
+            const month = MONTHS.indexOf(datePart.toUpperCase()) + 1;
+            datePartObj.month = month < 10 ? '0' + month : month;
+        }
+        return datePartObj;
+    }
+    isDateType(datePart) {
+        let isDatePart = false;
+        isDatePart = (/\d/.test(datePart) && SUFFIXES.includes(datePart.substr(datePart.length - 2)));
+        if (!isDatePart) {
+            const number = this.wordsToNumber(datePart);
+            if (number > 0 && number <= 31) {
+                isDatePart = true;
+            }
+        }
+        return isDatePart;
+    }
+    parseDateVal(datePart, datePartObj) {
+        let isDatePart = false;
+        let convertedNum = 0;
+        isDatePart = SUFFIXES.some((key) => {
+            return datePart.includes(key);
+        });
+        if (!isDatePart) {
+            convertedNum = this.wordsToNumber(datePart);
+            if (convertedNum > 0 && convertedNum <= 31) {
+                isDatePart = true;
+            }
+        }
+        if (isDatePart) {
+            datePartObj.date = convertedNum;
+        }
+    }
+    isMonthType(datePart) {
+        const month = MONTHS.indexOf(datePart.toUpperCase());
+        return month > -1;
+    }
+    parseMonthVal(datePart, datePartObj) {
+        const month = MONTHS.indexOf(datePart.toUpperCase());
+        if (month > -1) {
+            datePartObj.month = month < 10 ? '0' + month : month;
+        }
+    }
+    isYearType(datePart) {
+        let year = this.wordsToNumber(datePart);
+        return year > 1000;
+    }
+    parseYearVal(datePart, datePartObj) {
+        const year = this.wordsToNumber(datePart);
+        if (year > 1000) {
+            datePartObj.year = year;
+        }
+    }
+    wordsToNumber(word) {
+        // Returning integer if it is not actual word
+        if (!Number.isNaN(parseInt(word))) {
+            return parseInt(word);
+        }
+        word = word.replace(/and/g, ''); // Replace joiners
+        let words = word.toLowerCase().trim().split(' ');
+        let num = 0;
+        let numStr = '';
+        let tens = 0;
+        words = this.parseColloquialWords(words);
+        words.forEach(wordStr => {
+            wordStr = this.eliminateString(wordStr);
+            if (typeof wordStr == 'number') {
+                num = wordStr;
+            }
+            else {
+                if (UNIT[wordStr]) {
+                    num = num + NUMBER[wordStr];
+                }
+                else if (TEN[wordStr]) {
+                    num = num + TEN[wordStr];
+                }
+                else if (MAGNITUDE[wordStr]) {
+                    num = num * MAGNITUDE[wordStr];
+                }
+            }
+        });
+        return num;
+    }
+    parseColloquialWords(wordsArr) {
+        if (wordsArr.length == 2) {
+            if (TEN[wordsArr[0]] && (TEN[wordsArr[1]] || TWOS[wordsArr[1]])) {
+                wordsArr.splice(1, 0, 'hundred');
+            }
+        }
+        if (MAGNITUDE[wordsArr[0]]) {
+            wordsArr.splice(0, 0, 'one');
+        }
+        return wordsArr;
+    }
+    eliminateString(word) {
+        if (/\d/.test(word) && SUFFIXES.includes(word.substr(word.length - 2))) {
+            word = word.substr(0, word.length - 2); // Remove last suffixes such as 'st', 'th' from 1st, 10th
+            word = parseInt(word);
+        }
+        return word;
+    }
+};
+VuiVoiceRecognitionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], VuiVoiceRecognitionService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/ng-voice-inputs/vui-input.directive.ts":
+/*!********************************************************!*\
+  !*** ./src/app/ng-voice-inputs/vui-input.directive.ts ***!
+  \********************************************************/
+/*! exports provided: VuiInputDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VuiInputDirective", function() { return VuiInputDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment/moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ng_voice_inputs_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ng-voice-inputs.service */ "./src/app/ng-voice-inputs/ng-voice-inputs.service.ts");
+
+
+
+const moment = moment_moment__WEBPACK_IMPORTED_MODULE_2__;
+
+const DEFAULT_OPTS = {
+    type: 'text',
+    format: 'DD/MM/YYYY'
+};
+/**
+ * Options for VuiInput directive
+ * @param type Data type for input. Possible values are: 'text', 'address', 'date', 'number'. Default: 'text'
+ * @param format (Optional) Date format for datepicker input. eg, 'MM/DD/YYYY'. Default: 'DD/MM/YYYY'.
+ */
+class Options {
+}
+let VuiInputDirective = class VuiInputDirective {
+    constructor(vuiService, el) {
+        this.vuiService = vuiService;
+        this.el = el;
+        this.el.nativeElement.setAttribute('vui-ref', this.vuiService.inputRefs.length);
+        this.vuiService.inputRefs.push(this.el);
+        this.el.nativeElement.addEventListener('focus', (evt) => {
+            this.vuiService.currentRef = parseInt(evt.target.getAttribute('vui-ref'));
+        });
+    }
+    ngOnInit() {
+        this.options = Object.assign({}, DEFAULT_OPTS, this.options);
+        this.el['options'] = this.options;
+    }
+    formatDate(date) {
+        return moment(date).format(this.options.format);
+    }
+};
+VuiInputDirective.ctorParameters = () => [
+    { type: _ng_voice_inputs_service__WEBPACK_IMPORTED_MODULE_3__["VuiVoiceRecognitionService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])('vuiInput'),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Options)
+], VuiInputDirective.prototype, "options", void 0);
+VuiInputDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+        selector: '[vuiInput]'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ng_voice_inputs_service__WEBPACK_IMPORTED_MODULE_3__["VuiVoiceRecognitionService"],
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
+], VuiInputDirective);
+
+
+
+/***/ }),
+
+/***/ "./src/app/ng-voice-inputs/vui-response.ts":
+/*!*************************************************!*\
+  !*** ./src/app/ng-voice-inputs/vui-response.ts ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return VuiResponse; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+/**
+ * @param type Type of response
+ * Possible values for type are:
+ * 'date-range', 'date', 'text', 'number'
+ * @param value Response value which can be text, number, date
+ *
+ */
+class VuiResponse {
+    constructor(type, value) {
+        this.type = type || 'text';
+        this.value = value;
+    }
+}
 
 
 /***/ }),
@@ -836,7 +1598,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Workspace\Personal\angular-vui-form\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Workspace\Personal\NgVoiceInputs\src\main.ts */"./src/main.ts");
 
 
 /***/ })

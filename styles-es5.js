@@ -93,7 +93,7 @@
 
   /***/
   function node_modulesAngularDevkitBuildAngularSrcAngularCliFilesPluginsRawCssLoaderJsNode_modulesPostcssLoaderSrcIndexJsNode_modulesSassLoaderLibLoaderJsSrcStylesScss(module, exports) {
-    module.exports = [[module.i, "html, body {\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n  font-family: Roboto, \"Helvetica Neue\", sans-serif;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9DOlxcV29ya3NwYWNlXFxQZXJzb25hbFxcYW5ndWxhci12dWktZm9ybS9zcmNcXHN0eWxlcy5zY3NzIiwic3JjL3N0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQWEsWUFBQTtBQ0ViOztBRERBO0VBQU8sU0FBQTtFQUFXLGlEQUFBO0FDTWxCIiwiZmlsZSI6InNyYy9zdHlsZXMuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImh0bWwsIGJvZHkgeyBoZWlnaHQ6IDEwMCU7IH1cclxuYm9keSB7IG1hcmdpbjogMDsgZm9udC1mYW1pbHk6IFJvYm90bywgXCJIZWx2ZXRpY2EgTmV1ZVwiLCBzYW5zLXNlcmlmOyB9ICIsImh0bWwsIGJvZHkge1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbmJvZHkge1xuICBtYXJnaW46IDA7XG4gIGZvbnQtZmFtaWx5OiBSb2JvdG8sIFwiSGVsdmV0aWNhIE5ldWVcIiwgc2Fucy1zZXJpZjtcbn0iXX0= */", '', '']];
+    module.exports = [[module.i, "html, body {\n  height: 100%;\n  scroll-behavior: smooth;\n}\n\nbody {\n  margin: 0;\n  font-family: Roboto, \"Helvetica Neue\", sans-serif;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9DOlxcV29ya3NwYWNlXFxQZXJzb25hbFxcTmdWb2ljZUlucHV0cy9zcmNcXHN0eWxlcy5zY3NzIiwic3JjL3N0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQWEsWUFBQTtFQUFjLHVCQUFBO0FDRzNCOztBREZBO0VBQU8sU0FBQTtFQUFXLGlEQUFBO0FDT2xCIiwiZmlsZSI6InNyYy9zdHlsZXMuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImh0bWwsIGJvZHkgeyBoZWlnaHQ6IDEwMCU7IHNjcm9sbC1iZWhhdmlvcjogc21vb3RoOyB9XHJcbmJvZHkgeyBtYXJnaW46IDA7IGZvbnQtZmFtaWx5OiBSb2JvdG8sIFwiSGVsdmV0aWNhIE5ldWVcIiwgc2Fucy1zZXJpZjsgfSIsImh0bWwsIGJvZHkge1xuICBoZWlnaHQ6IDEwMCU7XG4gIHNjcm9sbC1iZWhhdmlvcjogc21vb3RoO1xufVxuXG5ib2R5IHtcbiAgbWFyZ2luOiAwO1xuICBmb250LWZhbWlseTogUm9ib3RvLCBcIkhlbHZldGljYSBOZXVlXCIsIHNhbnMtc2VyaWY7XG59Il19 */", '', '']];
     /***/
   },
 
@@ -635,31 +635,31 @@
   /***/
   function _(module, exports, __webpack_require__) {
     __webpack_require__(
-    /*! C:\Workspace\Personal\angular-vui-form\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */
+    /*! C:\Workspace\Personal\NgVoiceInputs\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */
     "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
 
     __webpack_require__(
-    /*! C:\Workspace\Personal\angular-vui-form\node_modules\bootstrap\dist\css\bootstrap.min.css */
+    /*! C:\Workspace\Personal\NgVoiceInputs\node_modules\bootstrap\dist\css\bootstrap.min.css */
     "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 
     __webpack_require__(
-    /*! C:\Workspace\Personal\angular-vui-form\node_modules\font-awesome\css\font-awesome.css */
+    /*! C:\Workspace\Personal\NgVoiceInputs\node_modules\font-awesome\css\font-awesome.css */
     "./node_modules/font-awesome/css/font-awesome.css");
 
     __webpack_require__(
-    /*! C:\Workspace\Personal\angular-vui-form\node_modules\primeng\resources\primeng.min.css */
+    /*! C:\Workspace\Personal\NgVoiceInputs\node_modules\primeng\resources\primeng.min.css */
     "./node_modules/primeng/resources/primeng.min.css");
 
     __webpack_require__(
-    /*! C:\Workspace\Personal\angular-vui-form\node_modules\primeng\resources\themes\nova-dark\theme.css */
+    /*! C:\Workspace\Personal\NgVoiceInputs\node_modules\primeng\resources\themes\nova-dark\theme.css */
     "./node_modules/primeng/resources/themes/nova-dark/theme.css");
 
     __webpack_require__(
-    /*! C:\Workspace\Personal\angular-vui-form\node_modules\primeicons\primeicons.css */
+    /*! C:\Workspace\Personal\NgVoiceInputs\node_modules\primeicons\primeicons.css */
     "./node_modules/primeicons/primeicons.css");
 
     module.exports = __webpack_require__(
-    /*! C:\Workspace\Personal\angular-vui-form\src\styles.scss */
+    /*! C:\Workspace\Personal\NgVoiceInputs\src\styles.scss */
     "./src/styles.scss");
     /***/
   }
